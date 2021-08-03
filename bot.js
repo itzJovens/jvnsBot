@@ -27,74 +27,66 @@ client.on("USERNOTICE", onMessageHandler);
 // Connect to Twitch:
 client.connect();
 
+// RESUBS
+
 client.on("resub", function (channel, username, months, message, userstate, methods) {
     // Do your stuff.
   let cumulativeMonths = userstate['msg-param-cumulative-months'];
+	
 // SRCHFPS
   if (channel.includes('srchfps')){
     client.say('srchfps', `PowerUpL Thanks for resubscribing @${username} for ${cumulativeMonths} MONTHS! PowerUpR`);
     console.log(`* Executed Resub || SRCHFPS`)}
-});
 
+// SYDEON
+const { prime, plan, planName } = methods;
+  if (channel.includes('sydeon')){
+	if (prime) {
+	syncDelay(5000)
+    client.say('sydeon', `primer peepoPogStrip`);
+    console.log(`* Executed Resub || SYDEON`)}
+});
+	
+// SUBSCRIPTIONS
+	
 client.on("subscription", function (channel, username, method, message, userstate) {
     // Do your stuff.
+	
 // SRCHFPS
   if (channel.includes('srchfps')){
     client.say('srchfps', `PowerUpR Thanks for subscribing @${username} PowerUpR ||`);
     console.log(`* Executed Sub || SRCHFPS`)}
+	
+//SYDEON
+const { prime, plan, planName } = method;
+  if (channel.includes('sydeon')){
+	if (prime) {
+	syncDelay(5000)
+    client.say('sydeon', `primer peepoPogStrip`);
+    console.log(`* Executed Sub || SYDEON`)}	
+	}
 });
+
+// GIFTED SUBS	
 
 client.on("subgift", (channel, username, streakMonths, recipient, methods, userstate) => {
     // Do your stuff.
   let senderCount = ~~userstate["msg-param-sender-count"];
+	
 // SRCHFPS
   if (channel.includes('srchfps')) {
     client.say('srchfps', `PowerUpL GIFTED SUBS PowerUpR ||`);
     let senderCount = ~~userstate["msg-param-sender-count"];
     console.Log(`* Executed Gifted Subs || SRCHFPS`)}
-})
-
-// KARAGII
-client.on("subgift", (channel, username, streakMonths, recipient, methods, userstate) => {
-    // Do your stuff.
-  let senderCount = ~~userstate["msg-param-sender-count"];
-// SRCHFPS
+	
+// KARAGII 
   if (channel.includes('karagii')) {
 	  syncDelay(3000)
     client.say('karagii', `karagiMula GIFTED SUBS karagiMula`);
     let senderCount = ~~userstate["msg-param-sender-count"];
     console.Log(`* Executed Gifted Subs || KARAGII`)}
-})
-
-// SYDEON
-client.on("resub", function (channel, username, months, message, userstate, methods) {
-    // Do your stuff.
-  let cumulativeMonths = userstate['msg-param-cumulative-months'];
-	const { prime, plan, planName } = methods;
-// SRCHFPS
-  if (channel.includes('sydeon')){
-	  if (prime) {
-		  syncDelay(5000)
-    client.say('sydeon', `primer peepoPogStrip`);
-    console.log(`* Executed Resub || SYDEON`)}
-  }
-});
-
-client.on("subscription", function (channel, username, method, message, userstate) {
-    // Do your stuff.
-	const { prime, plan, planName } = method;
-// SRCHFPS
-  if (channel.includes('sydeon')){
-	  if (prime) {
-		  syncDelay(5000)
-    client.say('sydeon', `primer peepoPogStrip`);
-    console.log(`* Executed Sub || SYDEON`)}
-  }
-});
-
-client.on("subgift", (channel, username, streakMonths, recipient, methods, userstate) => {
-    // Do your stuff.
-  let senderCount = ~~userstate["msg-param-sender-count"];
+	
+// SYDEON 
   if (channel.includes('sydeon')) {
 	  if (senderCount > 5) {
 	  syncDelay(5000)
@@ -104,3 +96,34 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
   }
 })
 
+
+
+function onConnectedHandler(addr, port) {
+	client.say('itzjovens', `Sub/Bits Bot has Started!`)
+    	console.log(`* Connected to ${addr}:${port}`);
+}
+
+function syncDelay(milliseconds){
+ var start = new Date().getTime();
+ var end=0;
+ while( (end-start) < milliseconds){
+     end = new Date().getTime();
+ }
+}
+
+function onMessageHandler(target, context, msg, self) {
+    if (self) { return; } // Ignore messages from the bot
+}
+
+String.prototype.toHHMMSS = function () {
+    var sec_num = parseInt(this, 10); // don't forget the second param
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    var time    = hours+':'+minutes+':'+seconds;
+    return time;
+}
