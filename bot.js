@@ -96,7 +96,21 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
   }
 })
 
-
+// UPTIME COMMAND	
+	
+client.on('message', (channel, tags, message, self) => {
+	if(self) return;
+let isBroadcaster = channel.slice(1) === tags.username;
+  if (isBroadcaster){
+  if (channel.includes('itzjovens'))
+	if(message === '|uptime subs') {
+    		var time = process.uptime();
+    		var uptime = (time + "").toHHMMSS();
+	client.say('itzjovens', `${uptime}`);
+	console.log(`Executed uptime command in #itzjovens channel for sub/bits bot || ${uptime} !`)
+	}
+	}
+});
 
 function onConnectedHandler(addr, port) {
 	client.say('itzjovens', `Sub/Bits Bot has Started!`)
