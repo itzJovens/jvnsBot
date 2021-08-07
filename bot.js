@@ -41,7 +41,7 @@ client.on("resub", function (channel, username, months, message, userstate, meth
 // DEANSOCOOL
   if (channel.includes('deansocool')){
 	  syncDelay(5000)
-    client.say('deansocool', `@${username.toUpperCase} deansoW`);
+    client.say('itzjovens', `@${username.toUpperCase} deansoW`);
     console.log(`* Executed Resub || DEANSOCOOL`)}
 
 // SYDEON
@@ -66,7 +66,7 @@ client.on("subscription", function (channel, username, method, message, userstat
 	
 // DEANSOCOOL
   if (channel.includes('deansocool')){
-    client.say('deansocool', `@${username.toUpperCase} deansoW`);
+    client.say('itzjovens', `@${username.toUpperCase} deansoW`);
     console.log(`* Executed Sub || DEANSOCOOL`)}
 	
 //SYDEON
@@ -94,7 +94,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 // DEANSOCOOL
   if (channel.includes('deansocool')) {
 	  syncDelay(2000)
-    client.say('deansocool', `${username.toUpperCase} deansoW`);
+    client.say('itzjovens', `${username.toUpperCase} deansoW`);
     let senderCount = ~~userstate["msg-param-sender-count"];
     console.Log(`* Executed Gifted Subs || DEANSOCOOL`)}
 	
