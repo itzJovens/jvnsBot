@@ -38,12 +38,6 @@ client.on("resub", function (channel, username, months, message, userstate, meth
     client.say('srchfps', `@${username.toUpperCase()} FOR ${cumulativeMonths} MONTHS deansoW`);
     console.log(`* Executed Resub || SRCHFPS`)}
 
-// DEANSOCOOL
-  if (channel.includes('deansocool')){
-	  syncDelay(5000)
-    client.say('itzjovens', `${username.toUpperCase()} deansoW`);
-    console.log(`* Executed Resub || DEANSOCOOL`)}
-
 // SYDEON
 const { prime, plan, planName } = methods;
   if (channel.includes('sydeon')){
@@ -63,11 +57,6 @@ client.on("subscription", function (channel, username, method, message, userstat
   if (channel.includes('srchfps')){
     client.say('srchfps', `@${username.toUpperCase()} deansoW`);
     console.log(`* Executed Sub || SRCHFPS`)}
-	
-// DEANSOCOOL
-  if (channel.includes('deansocool')){
-    client.say('itzjovens', `${username.toUpperCase()} deansoW`);
-    console.log(`* Executed Sub || DEANSOCOOL`)}
 	
 //SYDEON
 const { prime, plan, planName } = method;
