@@ -83,7 +83,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 // DEANSOCOOL
   if (channel.includes('deansocool')) {
 	  syncDelay(2000)
-    client.say('itzjovens', `${username.toUpperCase()} deansoW`);
+    client.say('deansocool', `${username.toUpperCase()} deansoW`);
     let senderCount = ~~userstate["msg-param-sender-count"];
     console.Log(`* Executed Gifted Subs || DEANSOCOOL`)}
 	
