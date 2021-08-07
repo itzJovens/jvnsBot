@@ -9,7 +9,7 @@ const opts = {
         password: 'oauth:u79zcmhtqum7o9we321k3xhpeh9x71'
     },
     channels: [
-        'itzjovens', 'uknwmyname', 'xdaboinextdoorx', 'karagii', 'sydeon', 'srchfps'
+        'itzjovens', 'uknwmyname', 'xdaboinextdoorx', 'karagii', 'sydeon', 'srchfps', 'deansocool'
     ]
 };
 
@@ -38,6 +38,12 @@ client.on("resub", function (channel, username, months, message, userstate, meth
     client.say('srchfps', `@${username.toUpperCase} FOR ${cumulativeMonths} MONTHS lancheW`);
     console.log(`* Executed Resub || SRCHFPS`)}
 
+// DEANSOCOOL
+  if (channel.includes('deansocool')){
+	  syncDelay(5000)
+    client.say('deansocool', `@${username.toUpperCase} deansoW`);
+    console.log(`* Executed Resub || DEANSOCOOL`)}
+
 // SYDEON
 const { prime, plan, planName } = methods;
   if (channel.includes('sydeon')){
@@ -57,6 +63,11 @@ client.on("subscription", function (channel, username, method, message, userstat
   if (channel.includes('srchfps')){
     client.say('srchfps', `@${username.toUpperCase} lancheW`);
     console.log(`* Executed Sub || SRCHFPS`)}
+	
+// DEANSOCOOL
+  if (channel.includes('deansocool')){
+    client.say('deansocool', `@${username.toUpperCase} deansoW`);
+    console.log(`* Executed Sub || DEANSOCOOL`)}
 	
 //SYDEON
 const { prime, plan, planName } = method;
@@ -79,6 +90,13 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
     client.say('srchfps', `GIFTED SUBS lancheW`);
     let senderCount = ~~userstate["msg-param-sender-count"];
     console.Log(`* Executed Gifted Subs || SRCHFPS`)}
+
+// DEANSOCOOL
+  if (channel.includes('deansocool')) {
+	  syncDelay(2000)
+    client.say('deansocool', `GIFTED SUBS deansoW`);
+    let senderCount = ~~userstate["msg-param-sender-count"];
+    console.Log(`* Executed Gifted Subs || DEANSOCOOL`)}
 	
 // KARAGII 
   if (channel.includes('karagii')) {
