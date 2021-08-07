@@ -41,7 +41,7 @@ client.on("resub", function (channel, username, months, message, userstate, meth
 // DEANSOCOOL
   if (channel.includes('deansocool')){
 	  syncDelay(5000)
-    client.say('itzjovens', `@${username.toUpperCase()} deansoW`);
+    client.say('itzjovens', `${username.toUpperCase()} deansoW`);
     console.log(`* Executed Resub || DEANSOCOOL`)}
 
 // SYDEON
@@ -66,7 +66,7 @@ client.on("subscription", function (channel, username, method, message, userstat
 	
 // DEANSOCOOL
   if (channel.includes('deansocool')){
-    client.say('itzjovens', `@${username.toUpperCase()} deansoW`);
+    client.say('itzjovens', `${username.toUpperCase()} deansoW`);
     console.log(`* Executed Sub || DEANSOCOOL`)}
 	
 //SYDEON
