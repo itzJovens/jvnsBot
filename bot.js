@@ -9,7 +9,7 @@ const opts = {
         password: 'oauth:u79zcmhtqum7o9we321k3xhpeh9x71'
     },
     channels: [
-        'itzjovens', 'uknwmyname', 'xdaboinextdoorx', 'karagii', 'sydeon', 'srchfps', 'deansocool'
+        'itzjovens', 'uknwmyname', 'xdaboinextdoorx', 'karagii', 'sydeon', 'srchfps', ''
     ]
 };
 
@@ -94,7 +94,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 // DEANSOCOOL
   if (channel.includes('deansocool')) {
 	  syncDelay(2000)
-    client.say('deansocool', `GIFTED SUBS deansoW`);
+    client.say('deansocool', `${username.toUpperCase} deansoW`);
     let senderCount = ~~userstate["msg-param-sender-count"];
     console.Log(`* Executed Gifted Subs || DEANSOCOOL`)}
 	
