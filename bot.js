@@ -30,6 +30,7 @@ client.connect();
 // RESUBS
 
 client.on("resub", function (channel, username, months, message, userstate, methods) {
+	  let isTurned = turned.includes(channel.slice(1));
     // Do your stuff.
   let cumulativeMonths = userstate['msg-param-cumulative-months'];
 	
@@ -51,6 +52,7 @@ const { prime, plan, planName } = methods;
 // SUBSCRIPTIONS
 	
 client.on("subscription", function (channel, username, method, message, userstate) {
+	  let isTurned = turned.includes(channel.slice(1));
     // Do your stuff.
 	
 // SRCHFPS
@@ -61,16 +63,19 @@ client.on("subscription", function (channel, username, method, message, userstat
 //SYDEON
 const { prime, plan, planName } = method;
   if (channel.includes('sydeon')){
+	if (isTurned){
 	if (prime) {
 	syncDelay(5000)
     client.say('sydeon', `primer peepoPogStrip`);
-    console.log(`* Executed Sub || SYDEON`)}	
+    console.log(`* Executed Sub || SYDEON`)}
+	}
 	}
 });
 
 // GIFTED SUBS	
 
 client.on("subgift", (channel, username, streakMonths, recipient, methods, userstate) => {
+	  let isTurned = turned.includes(channel.slice(1));
     // Do your stuff.
 // SRCHFPS
   if (channel.includes('srchfps')) {
@@ -80,29 +85,72 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 
 // DEANSOCOOL
   if (channel.includes('deansocool')) {
+	  if (isTurned){
   let senderCount = ~~userstate["msg-param-sender-count"];
 	  if (senderCount >= '5'){
 	  syncDelay(2000)
     client.say('deansocool', `${username.toUpperCase()} deansoW`);
     console.Log(`* Executed Gifted Subs || DEANSOCOOL`)}
+	  }
   }
 // KARAGII 
   if (channel.includes('karagii')) {
+	  if (isTurned){
   let senderCount = ~~userstate["msg-param-sender-count"];
 	  if (senderCount >= '5'){
 	  syncDelay(3000)
     client.say('karagii', `karagiMula GIFTED SUBS karagiMula`);
     console.Log(`* Executed Gifted Subs || KARAGII`)}
+	  }
   }
 // SYDEON 
   if (channel.includes('sydeon')) {
+	  if (isTurned){
   let senderCount = ~~userstate["msg-param-sender-count"];	
 	  if (senderCount >= '5') {
 	  syncDelay(5000)
     client.say('uknwmyname', `PogU GIFTED SUBS sydeonHype`);
     console.Log(`* Executed Gifted Subs || SYDEON`)}
+	  }
   }
 })
+
+// TURNED ON/OFF COMMANDS
+
+const turned = [];
+
+client.on('message', (channel, tags, message, self) => {
+	if(self) return;
+  let isBroadcaster = channel.slice(1) === tags.username;
+  if (isBroadcaster){
+  if (channel.includes('itzjovens')){
+	if(message.includes("|turnon")) {
+      if (turned.includes(message.slice(8))){
+        client.say('itzjovens', `${message.slice(8)}'s chat has already been turned on.`)
+      } else { client.say('itzjovens', `@${message.slice(8)}'s chat is now turned on.`);
+      turned.push(message.slice(8))
+}}}}});
+
+client.on('message', (channel, tags, message, self) => {
+	if(self) return;
+  let isBroadcaster = channel.slice(1) === tags.username;
+  if (isBroadcaster){
+  if (channel.includes('itzjovens')){
+	if(message.includes("|turnoff")) {
+    client.say('itzjovens', `@${message.slice(9)}'s chat has now been turned off.`);
+      turned.pop(message.slice(9))
+}}}});
+
+client.on('message', (channel, tags, message, self) => {
+	if(self) return;
+  let isBroadcaster = channel.slice(1) === tags.username;
+  if (isBroadcaster){
+  if (channel.includes('itzjovens'))
+	if(message === "|turned") {
+		client.say('itzjovens', `Chats turned on: ${turned}`);
+}}});
+
+
 
 // UPTIME COMMAND	
 	
