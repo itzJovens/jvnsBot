@@ -72,34 +72,34 @@ const { prime, plan, planName } = method;
 
 client.on("subgift", (channel, username, streakMonths, recipient, methods, userstate) => {
     // Do your stuff.
-  let senderCount = ~~userstate["msg-param-sender-count"];
-	
 // SRCHFPS
   if (channel.includes('srchfps')) {
+  let senderCount = ~~userstate["msg-param-sender-count"];	  
     client.say('srchfps', `GIFTED SUBS lancheW`);
-    let senderCount = ~~userstate["msg-param-sender-count"];
     console.Log(`* Executed Gifted Subs || SRCHFPS`)}
 
 // DEANSOCOOL
   if (channel.includes('deansocool')) {
+  let senderCount = ~~userstate["msg-param-sender-count"];
+	  if (senderCount >= '5'){
 	  syncDelay(2000)
     client.say('deansocool', `${username.toUpperCase()} deansoW`);
-    let senderCount = ~~userstate["msg-param-sender-count"];
     console.Log(`* Executed Gifted Subs || DEANSOCOOL`)}
-	
+  }
 // KARAGII 
   if (channel.includes('karagii')) {
+  let senderCount = ~~userstate["msg-param-sender-count"];
+	  if (senderCount >= '5'){
 	  syncDelay(3000)
     client.say('karagii', `karagiMula GIFTED SUBS karagiMula`);
-    let senderCount = ~~userstate["msg-param-sender-count"];
     console.Log(`* Executed Gifted Subs || KARAGII`)}
-	
+  }
 // SYDEON 
   if (channel.includes('sydeon')) {
-	  if (senderCount > 5) {
+  let senderCount = ~~userstate["msg-param-sender-count"];	
+	  if (senderCount >= '5') {
 	  syncDelay(5000)
     client.say('uknwmyname', `PogU GIFTED SUBS sydeonHype`);
-    let senderCount = ~~userstate["msg-param-sender-count"];
     console.Log(`* Executed Gifted Subs || SYDEON`)}
   }
 })
