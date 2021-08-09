@@ -41,6 +41,7 @@ client.on("resub", function (channel, username, months, message, userstate, meth
 
 // SYDEON
 const { prime, plan, planName } = methods;
+	  let isTurned = turned.includes(channel.slice(1));
   if (channel.includes('sydeon')){
 	if (prime) {
 	syncDelay(5000)
@@ -62,6 +63,7 @@ client.on("subscription", function (channel, username, method, message, userstat
 	
 //SYDEON
 const { prime, plan, planName } = method;
+	let isTurned = turned.includes(channel.slice(1));
   if (channel.includes('sydeon')){
 	if (isTurned){
 	if (prime) {
@@ -85,6 +87,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 
 // DEANSOCOOL
   if (channel.includes('deansocool')) {
+	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
   let senderCount = ~~userstate["msg-param-sender-count"];
 	  if (senderCount >= '5'){
@@ -95,6 +98,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
   }
 // KARAGII 
   if (channel.includes('karagii')) {
+	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
   let senderCount = ~~userstate["msg-param-sender-count"];
 	  if (senderCount >= '5'){
@@ -105,6 +109,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
   }
 // SYDEON 
   if (channel.includes('sydeon')) {
+	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
   let senderCount = ~~userstate["msg-param-sender-count"];	
 	  if (senderCount >= '5') {
