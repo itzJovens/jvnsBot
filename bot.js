@@ -30,7 +30,6 @@ client.connect();
 // RESUBS
 
 client.on("resub", function (channel, username, months, message, userstate, methods) {
-	  let isTurned = turned.includes(channel.slice(1));
     // Do your stuff.
   let cumulativeMonths = userstate['msg-param-cumulative-months'];
 	
@@ -53,7 +52,6 @@ const { prime, plan, planName } = methods;
 // SUBSCRIPTIONS
 	
 client.on("subscription", function (channel, username, method, message, userstate) {
-	  let isTurned = turned.includes(channel.slice(1));
     // Do your stuff.
 	
 // SRCHFPS
@@ -77,7 +75,6 @@ const { prime, plan, planName } = method;
 // GIFTED SUBS	
 
 client.on("subgift", (channel, username, streakMonths, recipient, methods, userstate) => {
-	  let isTurned = turned.includes(channel.slice(1));
     // Do your stuff.
 // SRCHFPS
   if (channel.includes('srchfps')) {
