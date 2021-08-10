@@ -77,7 +77,7 @@ const { prime, plan, planName } = method;
 client.on("subgift", (channel, username, streakMonths, recipient, methods, userstate) => {
     // Do your stuff.
 // ITJOVENS
-  if (channel.includes('nickmercs')) {
+  if (channel.includes('itzjovens')) {
   let senderCount = ~~userstate["msg-param-sender-count"];	  
     client.say('itzjovens', `GIFTED SUBS srchfpOXG deansoW`);
     console.Log(`* Executed ${senderCount} Gifted Subs || NICKMERCS`)}
