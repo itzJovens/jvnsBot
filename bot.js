@@ -80,13 +80,13 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
   if (channel.includes('nickmercs')) {
   let senderCount = ~~userstate["msg-param-sender-count"];	  
     client.say('itzjovens', `GIFTED SUBS srchfpOXG deansoW`);
-    console.Log(`* Executed Gifted Subs || NICKMERCS`)}
+    console.Log(`* Executed ${senderCount} Gifted Subs || NICKMERCS`)}
 
 // SRCHFPS
   if (channel.includes('srchfps')) {
   let senderCount = ~~userstate["msg-param-sender-count"];	  
     client.say('srchfps', `GIFTED SUBS srchfpOXG deansoW`);
-    console.Log(`* Executed Gifted Subs || SRCHFPS`)}
+    console.Log(`* Executed ${senderCount} Gifted Subs || SRCHFPS`)}
 
 // DEANSOCOOL
   if (channel.includes('deansocool')) {
@@ -96,7 +96,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 	  if (senderCount >= '5'){
 	  syncDelay(2000)
     client.say('deansocool', `${username.toUpperCase()} deansoW`);
-    console.Log(`* Executed Gifted Subs || DEANSOCOOL`)}
+    console.Log(`* Executed ${senderCount} Gifted Subs || DEANSOCOOL`)}
 	  }
   }
 // KARAGII 
@@ -107,7 +107,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 	  if (senderCount >= '5'){
 	  syncDelay(3000)
     client.say('karagii', `karagiMula GIFTED SUBS karagiMula`);
-    console.Log(`* Executed Gifted Subs || KARAGII`)}
+    console.Log(`* Executed ${senderCount} Gifted Subs || KARAGII`)}
 	  }
   }
 // SYDEON 
@@ -118,7 +118,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 	  if (senderCount >= '5') {
 	  syncDelay(5000)
     client.say('uknwmyname', `PogU GIFTED SUBS sydeonHype`);
-    console.Log(`* Executed Gifted Subs || SYDEON`)}
+    console.Log(`* Executed ${senderCount} Gifted Subs || SYDEON`)}
 	  }
   }
 })
