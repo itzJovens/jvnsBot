@@ -35,7 +35,7 @@ client.on("resub", function (channel, username, months, message, userstate, meth
 	
 // SRCHFPS
   if (channel.includes('srchfps')){
-    client.say('srchfps', `@${username.toUpperCase()} FOR ${cumulativeMonths} MONTHS deansoW`);
+    client.say('srchfps', `@${username.toUpperCase()} FOR ${cumulativeMonths} MONTHS srchfpOXG deansoW`);
     console.log(`* Executed Resub || SRCHFPS`)}
 
 // SYDEON
@@ -56,7 +56,7 @@ client.on("subscription", function (channel, username, method, message, userstat
 	
 // SRCHFPS
   if (channel.includes('srchfps')){
-    client.say('srchfps', `@${username.toUpperCase()} deansoW`);
+    client.say('srchfps', `${username.toUpperCase()} srchfpOXG deansoW`);
     console.log(`* Executed Sub || SRCHFPS`)}
 	
 //SYDEON
@@ -79,7 +79,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 // SRCHFPS
   if (channel.includes('srchfps')) {
   let senderCount = ~~userstate["msg-param-sender-count"];	  
-    client.say('srchfps', `GIFTED SUBS lancheW`);
+    client.say('srchfps', `GIFTED SUBS srchfpOXG deansoW`);
     console.Log(`* Executed Gifted Subs || SRCHFPS`)}
 
 // DEANSOCOOL
