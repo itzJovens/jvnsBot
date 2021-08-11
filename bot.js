@@ -116,9 +116,11 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 	  if (isTurned){
   let senderCount = ~~userstate["msg-param-sender-count"];	
 	  if (senderCount >= '5') {
-	  syncDelay(5000)
-    client.say('uknwmyname', `PogU GIFTED SUBS sydeonHype`);
+	  syncDelay(2000)
+    client.say('sydeon', `POGGIES`);
     console.Log(`* Executed ${senderCount} Gifted Subs || SYDEON`)}
+	if (senderCount <= '4') {
+		console.log(`Executed ${senderCount} Gifted Subs || SYDEON`)}
 	  }
   }
 })
