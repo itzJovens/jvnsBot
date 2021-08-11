@@ -79,9 +79,9 @@ const { prime, plan, planName } = method;
 client.on("subgift", (channel, username, streakMonths, recipient, methods, userstate) => {
     // Do your stuff.
 // ITJOVENS
-  if (channel.includes('itzjovens')) {
+  if (channel.includes('nickmercs')) {
   let senderCount = ~~userstate["msg-param-sender-count"];	  
-    client.say('itzjovens', `GIFTED SUBS srchfpOXG deansoW`);
+    client.say('itzjovens', `${senderCount} GIFTED SUBS srchfpOXG deansoW`);
     console.Log(`* Executed ${senderCount} Gifted Subs || NICKMERCS`)}
 
 // SRCHFPS
@@ -120,6 +120,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 	  if (senderCount >= '5') {
 	  syncDelay(2000)
     client.say('sydeon', `POGGIES`);
+    client.say('itzjovens', `POGGIES ${senderCount} GIFTED SUBS`);
     console.Log(`* Executed ${senderCount} Gifted Subs || SYDEON`)}
 	if (senderCount <= '4') {
 		console.log(`Executed ${senderCount} Gifted Subs || SYDEON`)}
