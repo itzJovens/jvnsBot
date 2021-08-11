@@ -38,17 +38,6 @@ client.on("resub", function (channel, username, months, message, userstate, meth
     client.say('srchfps', `${username.toUpperCase()} FOR ${cumulativeMonths} MONTHS srchfpOXG deansoW`);
     console.log(`* Executed Resub || SRCHFPS`)}
 
-// SYDEON
-const { prime, plan, planName } = methods;
-	  let isTurned = turned.includes(channel.slice(1));
-	if (isTurned) {
-  if (channel.includes('sydeon')){
-	if (prime) {
-	syncDelay(5000)
-    client.say('sydeon', `primer peepoPogStrip`);
-    console.log(`* Executed Resub || SYDEON`)}
-  }
-  }
 });
 	
 // SUBSCRIPTIONS
@@ -61,17 +50,6 @@ client.on("subscription", function (channel, username, method, message, userstat
     client.say('srchfps', `${username.toUpperCase()} srchfpOXG deansoW`);
     console.log(`* Executed Sub || SRCHFPS`)}
 	
-//SYDEON
-const { prime, plan, planName } = method;
-	let isTurned = turned.includes(channel.slice(1));
-  if (channel.includes('sydeon')){
-	if (isTurned){
-	if (prime) {
-	syncDelay(5000)
-    client.say('sydeon', `primer peepoPogStrip`);
-    console.log(`* Executed Sub || SYDEON`)}
-	}
-	}
 });
 
 // GIFTED SUBS	
@@ -82,13 +60,13 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
   if (channel.includes('nickmercs')) {
   let senderCount = ~~userstate["msg-param-sender-count"];	  
     client.say('itzjovens', `${senderCount} GIFTED SUBS srchfpOXG deansoW`);
-    console.Log(`* Executed ${senderCount} Gifted Subs || NICKMERCS`)}
+    console.log(`* Executed ${senderCount} Gifted Subs || NICKMERCS`)}
 
 // SRCHFPS
   if (channel.includes('srchfps')) {
   let senderCount = ~~userstate["msg-param-sender-count"];	  
     client.say('srchfps', `GIFTED SUBS srchfpOXG deansoW`);
-    console.Log(`* Executed ${senderCount} Gifted Subs || SRCHFPS`)}
+    console.log(`* Executed ${senderCount} Gifted Subs || SRCHFPS`)}
 
 // DEANSOCOOL
   if (channel.includes('deansocool')) {
@@ -98,7 +76,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 	  if (senderCount >= '5'){
 	  syncDelay(2000)
     client.say('deansocool', `${username.toUpperCase()} deansoW`);
-    console.Log(`* Executed ${senderCount} Gifted Subs || DEANSOCOOL`)}
+    console.log(`* Executed ${senderCount} Gifted Subs || DEANSOCOOL`)}
 	  }
   }
 // KARAGII 
@@ -109,7 +87,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 	  if (senderCount >= '5'){
 	  syncDelay(3000)
     client.say('karagii', `karagiMula GIFTED SUBS karagiMula`);
-    console.Log(`* Executed ${senderCount} Gifted Subs || KARAGII`)}
+    console.log(`* Executed ${senderCount} Gifted Subs || KARAGII`)}
 	  }
   }
 // SYDEON 
@@ -121,7 +99,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 	  syncDelay(3000)
     client.say('sydeon', `POGGIES`);
     client.say('itzjovens', `POGGIES ${senderCount} GIFTED SUBS`);
-    console.Log(`* Executed ${senderCount} Gifted Subs || SYDEON`)}
+    console.log(`* Executed ${senderCount} Gifted Subs || SYDEON`)}
 	if (senderCount <= '4') {
 		console.log(`Executed ${senderCount} Gifted Subs || SYDEON`)}
 	  }
@@ -140,7 +118,9 @@ client.on('message', (channel, tags, message, self) => {
 	if(message.includes("|turnon")) {
       if (turned.includes(message.slice(8))){
         client.say('itzjovens', `${message.slice(8)}'s chat has already been turned on.`)
+        console.log(`${message.slice(8)}'s chat has already been turned on.`)
       } else { client.say('itzjovens', `@${message.slice(8)}'s chat is now turned on.`);
+	      console.log(`@${message.slice(8)}'s chat is now turned on.`);
       turned.push(message.slice(8))
 }}}}});
 
@@ -151,6 +131,7 @@ client.on('message', (channel, tags, message, self) => {
   if (channel.includes('itzjovens')){
 	if(message.includes("|turnoff")) {
     client.say('itzjovens', `@${message.slice(9)}'s chat has now been turned off.`);
+    console.log(`@${message.slice(9)}'s chat has now been turned off.`);
       turned.pop(message.slice(9))
 }}}});
 
@@ -161,6 +142,7 @@ client.on('message', (channel, tags, message, self) => {
   if (channel.includes('itzjovens'))
 	if(message === "|turned") {
 		client.say('itzjovens', `Chats turned on: ${turned}`);
+		console.log(`Chats turned on: ${turned}`);
 }}});
 
 
