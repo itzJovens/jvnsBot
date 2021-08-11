@@ -118,7 +118,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 	  if (isTurned){
   let senderCount = ~~userstate["msg-param-sender-count"];	
 	  if (senderCount >= '5') {
-	  syncDelay(2000)
+	  syncDelay(3000)
     client.say('sydeon', `POGGIES`);
     client.say('itzjovens', `POGGIES ${senderCount} GIFTED SUBS`);
     console.Log(`* Executed ${senderCount} Gifted Subs || SYDEON`)}
