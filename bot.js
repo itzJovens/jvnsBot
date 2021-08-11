@@ -35,7 +35,7 @@ client.on("resub", function (channel, username, months, message, userstate, meth
 	
 // SRCHFPS
   if (channel.includes('srchfps')){
-    client.say('srchfps', `@${username.toUpperCase()} FOR ${cumulativeMonths} MONTHS srchfpOXG deansoW`);
+    client.say('srchfps', `${username.toUpperCase()} FOR ${cumulativeMonths} MONTHS srchfpOXG deansoW`);
     console.log(`* Executed Resub || SRCHFPS`)}
 
 // SYDEON
