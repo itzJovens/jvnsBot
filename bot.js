@@ -41,11 +41,13 @@ client.on("resub", function (channel, username, months, message, userstate, meth
 // SYDEON
 const { prime, plan, planName } = methods;
 	  let isTurned = turned.includes(channel.slice(1));
+	if (isTurned) {
   if (channel.includes('sydeon')){
 	if (prime) {
 	syncDelay(5000)
     client.say('sydeon', `primer peepoPogStrip`);
     console.log(`* Executed Resub || SYDEON`)}
+  }
   }
 });
 	
