@@ -9,7 +9,7 @@ const opts = {
         password: 'oauth:u79zcmhtqum7o9we321k3xhpeh9x71'
     },
     channels: [
-        'itzjovens', 'uknwmyname', 'timthetatman', 'karagii', 'sydeon', 'srchfps', 'deansocool'
+        'itzjovens', 'uknwmyname', 'nickmercs', 'karagii', 'sydeon', 'srchfps', 'deansocool'
     ]
 };
 
@@ -56,7 +56,7 @@ client.on("subscription", function (channel, username, method, message, userstat
 client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) => {
     // Do your stuff.
 // ITJOVENS
-  if (channel.includes('timthetatman')) {  
+  if (channel.includes('nickmercs')) {  
     client.say('itzjovens', `${numbOfSubs} GIFTED SUBS deansoW`);
     console.log(`****** ${numbOfSubs} Gifted Subs || TIMTHETATMAN ******`)}
 
