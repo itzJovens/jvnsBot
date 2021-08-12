@@ -53,18 +53,17 @@ client.on("subscription", function (channel, username, method, message, userstat
 });
 
 // GIFTED SUBS	
-
-client.on("subgift", (channel, username, streakMonths, recipient, methods, userstate) => {
+client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) => {
     // Do your stuff.
 // ITJOVENS
   if (channel.includes('nickmercs')) {  
-    client.say('itzjovens', `GIFTED SUBS srchfpOXG deansoW`);
-    console.log(`* Executed Gifted Subs || NICKMERCS`)}
+    client.say('itzjovens', `${numbOfSubs} GIFTED SUBS deansoW`);
+    console.log(`****** ${numbOfSubs} Gifted Subs || NICKMERCS ******`)}
 
 // SRCHFPS
   if (channel.includes('srchfps')) {	  
-    client.say('srchfps', `GIFTED SUBS srchfpOXG deansoW`);
-    console.log(`* Executed Gifted Subs || SRCHFPS`)}
+    client.say('srchfps', `${numbOfSubs} GIFTED SUBS srchfpOXG deansoW`);
+    console.log(`****** ${numbOfSubs} Gifted Subs || SRCHFPS ******`)}
 
 // DEANSOCOOL
   if (channel.includes('deansocool')) {
@@ -72,23 +71,23 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 	  if (isTurned){
 	  syncDelay(2000)
     client.say('deansocool', `${username.toUpperCase()} deansoW`);
-    console.log(`* Executed Gifted Subs || DEANSOCOOL`)}
+    console.log(`****** ${numbOfSubs} Gifted Subs || DEANSOCOOL ******`)}
   }
 // KARAGII 
   if (channel.includes('karagii')) {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
 	  syncDelay(3000)
-    client.say('karagii', `karagiMula GIFTED SUBS karagiMula`);
-    console.log(`* Executed Gifted Subs || KARAGII`)}
+    client.say('karagii', `${numbOfSubs} GIFTED SUBS karagiMula`);
+    console.log(`****** ${numbOfSubs} Gifted Subs || KARAGII ******`)}
   }
 // SYDEON 
   if (channel.includes('sydeon')) {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
 	  syncDelay(3000)
-    client.say('sydeon', `POGGIES`);
-    console.log(`* Executed Gifted Subs || SYDEON`)}
+    client.say('sydeon', `POGGIES ${numbOfSubs}`);
+    console.log(`****** ${numbOfSubs} Gifted Subs || SYDEON ******`)}
     }
 })
 
