@@ -88,7 +88,7 @@ client.on("subgift", (channel, username, streakMonths, recipient, methods, users
 	  if (isTurned){
 	  syncDelay(3000)
     client.say('sydeon', `POGGIES`);
-    console.log(`* Executed Gifted Subs || SYDEON)}
+    console.log(`* Executed Gifted Subs || SYDEON`)}
     }
 })
 
