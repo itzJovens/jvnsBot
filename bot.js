@@ -69,26 +69,32 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   if (channel.includes('deansocool')) {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
+	if (numbOfSubs >= 5){
 	  syncDelay(2000)
     client.say('deansocool', `${username.toUpperCase()} deansoW`);
     console.log(`****** ${numbOfSubs} Gifted Subs || DEANSOCOOL ******`)}
+	  }
   }
 // KARAGII 
   if (channel.includes('karagii')) {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
+	if (numbOfSubs >= 5){
 	  syncDelay(3000)
     client.say('karagii', `${numbOfSubs} GIFTED SUBS karagiMula`);
     console.log(`****** ${numbOfSubs} Gifted Subs || KARAGII ******`)}
+	  }
   }
 // SYDEON 
   if (channel.includes('sydeon')) {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
+	if (numbOfSubs >= 5){
 	  syncDelay(3000)
     client.say('sydeon', `POGGIES ${numbOfSubs}`);
     console.log(`****** ${numbOfSubs} Gifted Subs || SYDEON ******`)}
     }
+  }
 })
 
 // TURNED ON/OFF COMMANDS
