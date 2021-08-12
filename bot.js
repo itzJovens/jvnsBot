@@ -57,53 +57,39 @@ client.on("subscription", function (channel, username, method, message, userstat
 client.on("subgift", (channel, username, streakMonths, recipient, methods, userstate) => {
     // Do your stuff.
 // ITJOVENS
-  if (channel.includes('nickmercs')) {
-  let senderCount = ~~userstate["msg-param-sender-count"];	  
-    client.say('itzjovens', `${senderCount} GIFTED SUBS srchfpOXG deansoW`);
-    console.log(`* Executed ${senderCount} Gifted Subs || NICKMERCS`)}
+  if (channel.includes('nickmercs')) {  
+    client.say('itzjovens', `GIFTED SUBS srchfpOXG deansoW`);
+    console.log(`* Executed Gifted Subs || NICKMERCS`)}
 
 // SRCHFPS
-  if (channel.includes('srchfps')) {
-  let senderCount = ~~userstate["msg-param-sender-count"];	  
+  if (channel.includes('srchfps')) {	  
     client.say('srchfps', `GIFTED SUBS srchfpOXG deansoW`);
-    console.log(`* Executed ${senderCount} Gifted Subs || SRCHFPS`)}
+    console.log(`* Executed Gifted Subs || SRCHFPS`)}
 
 // DEANSOCOOL
   if (channel.includes('deansocool')) {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
-  let senderCount = ~~userstate["msg-param-sender-count"];
-	  if (senderCount >= '5'){
 	  syncDelay(2000)
     client.say('deansocool', `${username.toUpperCase()} deansoW`);
-    console.log(`* Executed ${senderCount} Gifted Subs || DEANSOCOOL`)}
-	  }
+    console.log(`* Executed Gifted Subs || DEANSOCOOL`)}
   }
 // KARAGII 
   if (channel.includes('karagii')) {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
-  let senderCount = ~~userstate["msg-param-sender-count"];
-	  if (senderCount >= '5'){
 	  syncDelay(3000)
     client.say('karagii', `karagiMula GIFTED SUBS karagiMula`);
-    console.log(`* Executed ${senderCount} Gifted Subs || KARAGII`)}
-	  }
+    console.log(`* Executed Gifted Subs || KARAGII`)}
   }
 // SYDEON 
   if (channel.includes('sydeon')) {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
-  let senderCount = ~~userstate["msg-param-sender-count"];	
-	  if (senderCount >= '5') {
 	  syncDelay(3000)
     client.say('sydeon', `POGGIES`);
-    client.say('itzjovens', `POGGIES ${senderCount} GIFTED SUBS`);
-    console.log(`* Executed ${senderCount} Gifted Subs || SYDEON`)}
-	if (senderCount <= '4') {
-		console.log(`Executed ${senderCount} Gifted Subs || SYDEON`)}
-	  }
-  }
+    console.log(`* Executed Gifted Subs || SYDEON)}
+    }
 })
 
 // TURNED ON/OFF COMMANDS
