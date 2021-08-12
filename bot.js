@@ -9,7 +9,7 @@ const opts = {
         password: 'oauth:u79zcmhtqum7o9we321k3xhpeh9x71'
     },
     channels: [
-        'itzjovens', 'uknwmyname', 'nickmercs', 'karagii', 'sydeon', 'srchfps', 'deansocool'
+        'itzjovens', 'uknwmyname', 'timthetatman', 'karagii', 'sydeon', 'srchfps', 'deansocool'
     ]
 };
 
@@ -35,7 +35,7 @@ client.on("resub", function (channel, username, months, message, userstate, meth
 	
 // SRCHFPS
   if (channel.includes('srchfps')){
-    client.say('srchfps', `${username.toUpperCase()} FOR ${cumulativeMonths} MONTHS srchfpOXG deansoW`);
+    client.say('srchfps', `${username.toUpperCase()} FOR ${cumulativeMonths} MONTHS deansoW`);
     console.log(`* Executed Resub || SRCHFPS`)}
 
 });
@@ -47,7 +47,7 @@ client.on("subscription", function (channel, username, method, message, userstat
 	
 // SRCHFPS
   if (channel.includes('srchfps')){
-    client.say('srchfps', `${username.toUpperCase()} srchfpOXG deansoW`);
+    client.say('srchfps', `${username.toUpperCase()} deansoW`);
     console.log(`* Executed Sub || SRCHFPS`)}
 	
 });
@@ -56,9 +56,9 @@ client.on("subscription", function (channel, username, method, message, userstat
 client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) => {
     // Do your stuff.
 // ITJOVENS
-  if (channel.includes('nickmercs')) {  
+  if (channel.includes('timthetatman')) {  
     client.say('itzjovens', `${numbOfSubs} GIFTED SUBS deansoW`);
-    console.log(`****** ${numbOfSubs} Gifted Subs || NICKMERCS ******`)}
+    console.log(`****** ${numbOfSubs} Gifted Subs || TIMTHETATMAN ******`)}
 
 // SRCHFPS
   if (channel.includes('srchfps')) {	  
