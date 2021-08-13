@@ -56,14 +56,14 @@ client.on("subscription", function (channel, username, method, message, userstat
 client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) => {
     // Do your stuff.
 // ITJOVENS
-  if (channel.includes('nickmercs')) {  
-    client.say('itzjovens', `${numbOfSubs} GIFTED SUBS deansoW`);
-    console.log(`****** ${numbOfSubs} Gifted Subs || TIMTHETATMAN ******`)}
+  if (channel.includes('itzjovens')) {  
+    client.say(channel, `${numbOfSubs} GIFTED SUBS deansoW`);
+    console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
 
 // SRCHFPS
   if (channel.includes('srchfps')) {	  
     client.say('srchfps', `${numbOfSubs} GIFTED SUBS srchfpOXG deansoW`);
-    console.log(`****** ${numbOfSubs} Gifted Subs || SRCHFPS ******`)}
+    console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
 
 // DEANSOCOOL
   if (channel.includes('deansocool')) {
@@ -71,8 +71,8 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	  if (isTurned){
 	if (numbOfSubs >= 5){
 	  syncDelay(2000)
-    client.say('deansocool', `${username.toUpperCase()} deansoW`);
-    console.log(`****** ${numbOfSubs} Gifted Subs || DEANSOCOOL ******`)}
+    client.say(channel, `${username.toUpperCase()} deansoW`);
+    console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
 	  }
   }
 // KARAGII 
@@ -81,8 +81,8 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	  if (isTurned){
 	if (numbOfSubs >= 5){
 	  syncDelay(3000)
-    client.say('karagii', `POGGERS ${numbOfSubs}`);
-    console.log(`****** ${numbOfSubs} Gifted Subs || KARAGII ******`)}
+    client.say(channel, `POGGERS ${numbOfSubs}`);
+    console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
 	  }
   }
 // SYDEON 
@@ -91,8 +91,8 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	  if (isTurned){
 	if (numbOfSubs >= 5){
 	  syncDelay(3000)
-    client.say('sydeon', `POGGIES ${numbOfSubs}`);
-    console.log(`****** ${numbOfSubs} Gifted Subs || SYDEON ******`)}
+    client.say(channel, `POGGIES ${numbOfSubs}`);
+    console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
     }
   }
 })
