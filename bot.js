@@ -27,7 +27,7 @@ client.on("USERNOTICE", onMessageHandler);
 // Connect to Twitch:
 client.connect();
 
-// RESUBS
+//////////////////////////////////////////////////////////////////////////////////////// RESUBS ///////////////////////////////////////////////////////////////////
 
 client.on("resub", function (channel, username, months, message, userstate, methods) {
     // Do your stuff.
@@ -40,29 +40,69 @@ client.on("resub", function (channel, username, months, message, userstate, meth
 
 });
 	
-// SUBSCRIPTIONS
+//////////////////////////////////////////////////////////////////////// SUBSCRIPTIONS ///////////////////////////////////////////////////////////////////////////
 	
 client.on("subscription", function (channel, username, method, message, userstate) {
     // Do your stuff.
 	
-// SRCHFPS
+//////////////// SRCHFPS
   if (channel.includes('srchfps')){
     client.say('srchfps', `${username.toUpperCase()} deansoW`);
     console.log(`* Executed Sub || SRCHFPS`)}
 	
 });
+///////////////////////////////////////////////////////////////// SUBSTITUTE GIFTED SUBS /////////////////////////////////////////////////////////////////
+const giftedsubs = []
 
-// GIFTED SUBS	
+client.on('message', (channel, tags, message, self) => {
+	if(self) return;
+  let isBroadcaster = channel.slice(1) === tags.username;
+  if (isBroadcaster){
+  if (channel.includes('itzjovens')){
+	if(message === "|giftedsubson") {
+      if (giftedsubs.includes(message.slice(14))){
+        client.say('itzjovens', `${message.slice(14)}'s chat has already been turned on.`)
+        console.log(`${message.slice(14)}'s chat has already been turned on.`)
+      } else { client.say('itzjovens', `@${message.slice(14)}'s chat is now turned on.`);
+	      console.log(`@${message.slice(14)}'s chat is now turned on.`);
+      giftedsubs.push(message.slice(14))
+}}}}});
+
+client.on('message', (channel, tags, message, self) => {
+	if(self) return;
+  let isBroadcaster = channel.slice(1) === tags.username;
+  if (isBroadcaster){
+  if (channel.includes('itzjovens')){
+	if(message.includes("|giftedsubsoff")) {
+    client.say('itzjovens', `@${message.slice(15)}'s chat has now been turned off.`);
+    console.log(`@${message.slice(15)}'s chat has now been turned off.`);
+      giftedsubs.pop(message.slice(15))
+}}}});
+
+client.on('message', (channel, tags, message, self) => {
+	if(self) return;
+  let isBroadcaster = channel.slice(1) === tags.username;
+  if (isBroadcaster){
+  if (channel.includes('itzjovens'))
+	if(message === "|giftedsubs") {
+		client.say('itzjovens', `Chat turned on: ${giftedsubs}`);
+		console.log(`Chats turned on: ${giftedsubs}`);
+}}});
+
+//////////////////////////////////////////////////////////////////////////////// GIFTED SUBS //////////////////////////////////////////////////////////////////////
 client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) => {
     // Do your stuff.
 // ITJOVENS
-  if (channel.includes('itzjovens')) {  
+  if (channel.includes('giftedsubs')) {
+	  if (numbOfSubs >= 5) {
+	  syncDelay(5000)
     client.say(channel, `${numbOfSubs} GIFTED SUBS deansoW`);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
+  }
 
 // SRCHFPS
   if (channel.includes('srchfps')) {	  
-    client.say('srchfps', `${numbOfSubs} GIFTED SUBS srchfpOXG deansoW`);
+    client.say('srchfps', `${numbOfSubs} GIFTED SUBS deansoW`);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
 
 // DEANSOCOOL
@@ -97,7 +137,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   }
 })
 
-// TURNED ON/OFF COMMANDS
+///////////////////////////////////////////////////////////////////////// TURNED ON/OFF /////////////////////////////////////////////////////////////////////////////
 
 const turned = [];
 
@@ -138,7 +178,7 @@ client.on('message', (channel, tags, message, self) => {
 
 
 
-// UPTIME COMMAND	
+//////////////////////////////////////////////////////////////////////////// UPTIME COMMAND ////////////////////////////////////////////////////////////////////
 	
 client.on('message', (channel, tags, message, self) => {
 	if(self) return;
@@ -150,6 +190,19 @@ let isBroadcaster = channel.slice(1) === tags.username;
     		var uptime = (time + "").toHHMMSS();
 	client.say('itzjovens', `${uptime}`);
 	console.log(`Executed uptime command in #itzjovens channel for sub/bits bot || ${uptime} !`)
+	}
+	}
+});
+
+
+client.on('message', (channel, tags, message, self) => {
+	if(self) return;
+let isBroadcaster = channel.slice(1) === tags.username;
+  if (isBroadcaster){
+  if (channel.includes('itzjovens'))
+	if(message === '|commands subs') {
+	client.say('itzjovens', `Commands for Subs/Bits: "|uptime subs", "|turned", "|turnedon/off", "|giftedsubs", "|giftedsubson/off"`);
+	console.log(`Executed command in #itzjovens channel for sub/bits bot || ${uptime} !`)
 	}
 	}
 });
