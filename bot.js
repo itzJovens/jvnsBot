@@ -59,7 +59,7 @@ client.on('message', (channel, tags, message, self) => {
   let isBroadcaster = channel.slice(1) === tags.username;
   if (isBroadcaster){
   if (channel.includes('itzjovens')){
-	if(message === "|giftedsubson") {
+	if(message.includes("|giftedsubson")) {
       if (giftedsubs.includes(message.slice(14))){
         client.say('itzjovens', `${message.slice(14)}'s chat has already been turned on.`)
         console.log(`${message.slice(14)}'s chat has already been turned on.`)
