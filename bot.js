@@ -9,7 +9,7 @@ const opts = {
         password: 'oauth:u79zcmhtqum7o9we321k3xhpeh9x71'
     },
     channels: [
-        'itzjovens', 'uknwmyname', 'nickmercs', 'karagii', 'sydeon', 'srchfps', 'deansocool'
+        'itzjovens', 'uknwmyname', 'nickmercs', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'giftedsubs'
     ]
 };
 
