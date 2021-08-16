@@ -9,7 +9,7 @@ const opts = {
         password: 'oauth:u79zcmhtqum7o9we321k3xhpeh9x71'
     },
     channels: [
-        'itzjovens', 'uknwmyname', 'nickmercs', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'kkatamina'
+        'itzjovens', 'uknwmyname', 'tsm_daequan', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'giftedsubs', 'xdaboinextdoorx'
     ]
 };
 
@@ -93,7 +93,7 @@ client.on('message', (channel, tags, message, self) => {
 client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) => {
     // Do your stuff.
 // ITJOVENS
-  if (channel.includes('kkatamina')) {
+  if (channel.includes('giftedsubs')) {
 	  if (numbOfSubs >= 5) {
 	  syncDelay(3000)
     client.say(channel, `${username.toUpperCase()} POGGIES `);
@@ -194,7 +194,7 @@ let isBroadcaster = channel.slice(1) === tags.username;
 	}
 });
 
-
+///////////////////////////////////////////////////////////////////////////////// COMMANDS ///////////////////////////////////////////////////////////////////////////
 client.on('message', (channel, tags, message, self) => {
 	if(self) return;
 let isBroadcaster = channel.slice(1) === tags.username;
@@ -207,6 +207,101 @@ let isBroadcaster = channel.slice(1) === tags.username;
 	}
 });
 
+//////////////////////////////////////////////////////////////////////////// TSM_DAEQUAN FOLLOWAGE ///////////////////////////////////////////////////////////////////
+// FIRST PART
+client.on('message', (channel, tags, message, self) => {
+  if(self) return;
+  var channel1 = channel
+  var message1 = message
+  if (channel.includes('tsm_daequan')){
+  if(message.toLowerCase().includes('!followage')) {
+    client.say('uknwmyname', `!followage ${tags.username} ${channel.slice(1)}`);
+    console.log(`EXECUTED FOLLOWAGE COMMAND FOR ${tags.username} on ${channel}`)}
+  }
+});
+// SECOND PART
+client.on('message', (channel, tags, message, self) => {
+	if(self) return;
+  if (channel.includes('uknwmyname')){
+    if (message.toLowerCase().includes('@itzjovens,')){
+      if (message.toLowerCase().includes('tsm_daequan')){
+      client.say('tsm_daequan', `/me ${message.slice(12)} daeKiwi`)
+      console.log(`EXECUTED FOLLOWAGE COMMAND IN TSM_DAEQUAN CHANNEL`)
+      }
+    }
+  }  
+});
+// UKNWMYNAME
+// FISRT PART
+client.on('message', (channel, tags, message, self) => {
+  if(self) return;
+  var channel1 = channel
+  var message1 = message
+  if (channel.includes('xdaboinextdoorx')){
+  if(message.toLowerCase().includes('!followage')) {
+    client.say('uknwmyname', `!followage ${tags.username} ${channel.slice(1)}`);
+    console.log(`EXECUTED FOLLOWAGE COMMAND FOR ${tags.username} on ${channel}`)}
+  }
+});
+// SECOND PART
+client.on('message', (channel, tags, message, self) => {
+	if(self) return;
+  if (channel.includes('uknwmyname')){
+    if (message.toLowerCase().includes('@itzjovens,')){
+      if (message.toLowerCase().includes('uknwmyname')){
+      client.say('xdaboinextdoorx', `/me ${message.slice(12)}`)
+      console.log(`EXECUTED FOLLOWAGE COMMAND IN TSM_DAEQUAN CHANNEL`)
+      }
+    }
+  }  
+});
+
+/////////////////////////////////////////////////////////////////////////////// ALLOWED COMMAND //////////////////////////////////////////////////////////////////////
+const allowed = [];
+
+client.on('message', (channel, tags, message, self) => {
+	if(self) return;
+  let isBroadcaster = channel.slice(1) === tags.username;
+  if (isBroadcaster){
+  if (channel.includes('itzjovens')){
+	if(message.includes("|allow")) {
+      if (allowed.includes(message.slice(7))){
+        client.say('itzjovens', `${message.slice(7)} has already been allowed`)
+      } else { client.say('itzjovens', `@${message.slice(7)} is now allowed. kkatamHi`);
+      allowed.push(message.slice(7))
+}}}}});
+
+client.on('message', (channel, tags, message, self) => {
+	if(self) return;
+  let isBroadcaster = channel.slice(1) === tags.username;
+  if (isBroadcaster){
+  if (channel.includes('itzjovens')){
+	if(message.includes("|remove")) {
+    client.say('itzjovens', `@${message.slice(8)} has now been removed.`);
+      allowed.pop(message.slice(8))
+}}}});
+
+client.on('message', (channel, tags, message, self) => {
+	if(self) return;
+  let isBroadcaster = channel.slice(1) === tags.username;
+  if (isBroadcaster){
+  if (channel.includes('itzjovens'))
+	if(message === "|ALLOWED") {
+		client.say('itzjovens', `${allowed}`);
+}}});
+
+///////////////////////////////////////////////////////////////////////// PING COMMAND ///////////////////////////////////////////////////////////////////////////
+client.on('message', (channel, tags, message, self) => {
+	if(self) return;
+  let isAllowed = allowed.includes(tags.username);
+  let isBroadcaster = channel.slice(1) === tags.username;
+  let allowedUp = isAllowed || isBroadcaster
+  if (allowedUp){
+  if (channel.includes('itzjovens')){
+	if(message.toLowerCase().includes("|ping")) {
+		client.say('itzjovens', `Pong!, ${tags.username} sydeonHey`);
+}}}});
+///////////////////////////////////////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////////////////////////////////////////
 function onConnectedHandler(addr, port) {
 	client.say('itzjovens', `Sub/Bits Bot has Started!`)
     	console.log(`* Connected to ${addr}:${port}`);
