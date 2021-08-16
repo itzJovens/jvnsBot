@@ -78,7 +78,7 @@ client.on('message', (channel, tags, message, self) => {
   if (channel.includes('itzjovens')){
 	const args = message.slice(1).split(' ');
 	if(message.includes("|giftedsubsoff")) {
-    client.say('itzjovens', `@${args[1])}'s chat has now been turned off.`);
+    client.say('itzjovens', `@${args[1]}'s chat has now been turned off.`);
     console.log(`@${args[1]}'s chat has now been turned off.`);
       giftedsubs.pop(args[1]);
 	client.part(args[1]);
