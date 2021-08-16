@@ -303,7 +303,7 @@ client.on('message', (channel, tags, message, self) => {
 }}}});
 ///////////////////////////////////////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////////////////////////////////////////
 function onConnectedHandler(addr, port) {
-	client.say('itzjovens', `/w itzjovens Bot has Started!`)
+	client.say('itzjovens', `Bot has Started!`)
     	console.log(`* Connected to ${addr}:${port}`);
 }
 
