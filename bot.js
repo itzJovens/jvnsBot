@@ -98,7 +98,7 @@ client.on('message', (channel, tags, message, self) => {
 client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) => {
     // Do your stuff.
 // ITJOVENS
-  if (channel.includes(giftedsub)) {
+  if (channel.includes(giftedsubs)) {
 	  if (numbOfSubs >= 5) {
 	  syncDelay(3000)
     client.say(channel, `${username.toUpperCase()} POGGIES `);
