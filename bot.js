@@ -52,31 +52,36 @@ client.on("subscription", function (channel, username, method, message, userstat
 	
 });
 ///////////////////////////////////////////////////////////////// SUBSTITUTE GIFTED SUBS /////////////////////////////////////////////////////////////////
-const giftedsubs = []
+let giftedsubs = []
 
 client.on('message', (channel, tags, message, self) => {
 	if(self) return;
   let isBroadcaster = channel.slice(1) === tags.username;
   if (isBroadcaster){
   if (channel.includes('itzjovens')){
+  const args = message.slice(1).split(' ');
 	if(message.includes("|giftedsubson")) {
-      if (giftedsubs.includes(message.slice(14))){
-        client.say('itzjovens', `${message.slice(14)}'s chat has already been turned on.`)
-        console.log(`${message.slice(14)}'s chat has already been turned on.`)
-      } else { client.say('itzjovens', `@${message.slice(14)}'s chat is now turned on.`);
-	      console.log(`@${message.slice(14)}'s chat is now turned on.`);
-      giftedsubs.push(message.slice(14))
+      if (giftedsubs.includes(args[1])){
+        client.say(channel, `${args[1]}'s chat has already been turned on.`)
+        console.log(`${args[1]}'s chat has already been turned on.`)
+      } else { client.say(channel, `@${args[1]}'s chat is now turned on.`);
+	      console.log(`@${args[1]}'s chat is now turned on.`);
+      giftedsubs.push(args[1])
+      client.join(args[1])
 }}}}});
 
+
 client.on('message', (channel, tags, message, self) => {
 	if(self) return;
   let isBroadcaster = channel.slice(1) === tags.username;
   if (isBroadcaster){
   if (channel.includes('itzjovens')){
+	const args = message.slice(1).split(' ');
 	if(message.includes("|giftedsubsoff")) {
-    client.say('itzjovens', `@${message.slice(15)}'s chat has now been turned off.`);
-    console.log(`@${message.slice(15)}'s chat has now been turned off.`);
-      giftedsubs.pop(message.slice(15))
+    client.say('itzjovens', `@${args[1])}'s chat has now been turned off.`);
+    console.log(`@${args[1]}'s chat has now been turned off.`);
+      giftedsubs.pop(args[1]);
+	client.part(args[1]);
 }}}});
 
 client.on('message', (channel, tags, message, self) => {
@@ -93,16 +98,16 @@ client.on('message', (channel, tags, message, self) => {
 client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) => {
     // Do your stuff.
 // ITJOVENS
-  if (channel.includes('giftedsubs')) {
+  if (channel.includes(giftedsub)) {
 	  if (numbOfSubs >= 5) {
 	  syncDelay(3000)
-    client.say('itzjovens', `${username.toUpperCase()} POGGIES `);
+    client.say(channel, `${username.toUpperCase()} POGGIES `);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
   }
 
 // SRCHFPS
   if (channel.includes('srchfps')) {	  
-    client.say('srchfps', `${numbOfSubs} GIFTED SUBS deansoW`);
+    client.say(channel, `${numbOfSubs} GIFTED SUBS deansoW`);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
 
 // DEANSOCOOL
@@ -138,44 +143,6 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 })
 
 ///////////////////////////////////////////////////////////////////////// TURNED ON/OFF /////////////////////////////////////////////////////////////////////////////
-
-const turned = [];
-
-client.on('message', (channel, tags, message, self) => {
-	if(self) return;
-  let isBroadcaster = channel.slice(1) === tags.username;
-  if (isBroadcaster){
-  if (channel.includes('itzjovens')){
-	if(message.includes("|turnon")) {
-      if (turned.includes(message.slice(8))){
-        client.say('itzjovens', `${message.slice(8)}'s chat has already been turned on.`)
-        console.log(`${message.slice(8)}'s chat has already been turned on.`)
-      } else { client.say('itzjovens', `@${message.slice(8)}'s chat is now turned on.`);
-	      console.log(`@${message.slice(8)}'s chat is now turned on.`);
-      turned.push(message.slice(8))
-}}}}});
-
-client.on('message', (channel, tags, message, self) => {
-	if(self) return;
-  let isBroadcaster = channel.slice(1) === tags.username;
-  if (isBroadcaster){
-  if (channel.includes('itzjovens')){
-	if(message.includes("|turnoff")) {
-    client.say('itzjovens', `@${message.slice(9)}'s chat has now been turned off.`);
-    console.log(`@${message.slice(9)}'s chat has now been turned off.`);
-      turned.pop(message.slice(9))
-}}}});
-
-client.on('message', (channel, tags, message, self) => {
-	if(self) return;
-  let isBroadcaster = channel.slice(1) === tags.username;
-  if (isBroadcaster){
-  if (channel.includes('itzjovens'))
-	if(message === "|turned") {
-		client.say('itzjovens', `Chats turned on: ${turned}`);
-		console.log(`Chats turned on: ${turned}`);
-}}});
-
 
 
 //////////////////////////////////////////////////////////////////////////// UPTIME COMMAND ////////////////////////////////////////////////////////////////////
@@ -300,6 +267,7 @@ client.on('message', (channel, tags, message, self) => {
   if (channel.includes('itzjovens')){
 	if(message.toLowerCase().includes("|ping")) {
 		client.say('itzjovens', `Pong!, ${tags.username} sydeonHey`);
+		console.log(`Pong`)
 }}}});
 ///////////////////////////////////////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////////////////////////////////////////
 function onConnectedHandler(addr, port) {
