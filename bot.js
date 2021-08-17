@@ -101,7 +101,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   if (channel.includes(giftedsubs)) {
 	  if (numbOfSubs >= 5) {
 	  syncDelay(3000)
-    client.say(channel, `${username.toUpperCase()} POGGIES `);
+    client.say(channel, `${username.toUpperCase()} deansoW `);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
   }
 
