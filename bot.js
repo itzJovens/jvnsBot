@@ -9,7 +9,7 @@ const opts = {
         password: 'oauth:u79zcmhtqum7o9we321k3xhpeh9x71'
     },
     channels: [
-        'itzjovens', 'uknwmyname', 'tsm_daequan', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'xdaboinextdoorx'
+        'itzjovens', 'uknwmyname', 'tsm_daequan', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'xdaboinextdoorx', 'giftedsubs'
     ]
 };
 
@@ -52,7 +52,7 @@ client.on("subscription", function (channel, username, method, message, userstat
 	
 });
 ///////////////////////////////////////////////////////////////// SUBSTITUTE GIFTED SUBS /////////////////////////////////////////////////////////////////
-let giftedsubs = []
+var giftedsub;
 
 client.on('message', (channel, tags, message, self) => {
 	if(self) return;
@@ -60,15 +60,24 @@ client.on('message', (channel, tags, message, self) => {
   if (isBroadcaster){
   if (channel.includes('itzjovens')){
   const args = message.slice(1).split(' ');
-	if(message.includes("|giftedsubson")) {
-      if (giftedsubs.includes(args[1])){
-        client.say(channel, `${args[1]}'s chat has already been turned on.`)
-        console.log(`${args[1]}'s chat has already been turned on.`)
-      } else { client.say(channel, `@${args[1]}'s chat is now turned on.`);
+	if(message.includes("|gsedit")) {
+      if (typeof giftedsub !== 'undefined'){
+        client.say('itzjovens', `${args[1]}'s chat turned on.`);
+        console.log(`${args[1]}'s chat turned on. ${giftedsub} turned off`);
+	   if (!channel.includes(args[1])){
+		   client.join(args[1]);
+	   }
+	      var giftedsub = '${args[1]}';
+		}
+      } else if(typeof giftedsub === 'undefined') { client.say('itzjovens', `@${args[1]}'s chat turned on.`);
 	      console.log(`@${args[1]}'s chat is now turned on.`);
-      giftedsubs.push(args[1])
-      client.join(args[1])
-}}}}});
+		if (!channel.includes(args[1])){
+			client.join(args[1])
+		}
+		var giftedsub = '${args[1]}';
+		}
+}}
+});
 
 
 client.on('message', (channel, tags, message, self) => {
@@ -80,7 +89,7 @@ client.on('message', (channel, tags, message, self) => {
 	if(message.includes("|giftedsubsoff")) {
     client.say('itzjovens', `@${args[1]}'s chat has now been turned off.`);
     console.log(`@${args[1]}'s chat has now been turned off.`);
-      giftedsubs.pop(args[1]);
+    	var giftedsub;
 	client.part(args[1]);
 }}}});
 
@@ -98,7 +107,7 @@ client.on('message', (channel, tags, message, self) => {
 client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) => {
     // Do your stuff.
 // ITJOVENS
-  if (channel.includes(giftedsubs)) {
+  if (channel.includes('itzjovens')) {
 	  if (numbOfSubs >= 5) {
 	  syncDelay(3000)
     client.say(channel, `${username.toUpperCase()} deansoW `);
