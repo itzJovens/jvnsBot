@@ -66,12 +66,12 @@ client.on('message', (channel, tags, message, self) => {
         console.log(`${args[1]}'s chat turned on. ${giftedsub} turned off`);
 	   if (!channel.includes(args[1])){
 		   client.join(args[1])};
-	     	giftedsub = '${args[1]}';
+	     	giftedsub = args[1];
       } else if(typeof giftedsub === 'undefined') { client.say('itzjovens', `@${args[1]}'s chat turned on.`);
 	      console.log(`@${args[1]}'s chat is now turned on.`);
 		if (!channel.includes(args[1])){
 			client.join(args[1])};
-		giftedsub = '${args[1]}';
+		giftedsub = args[1];
 		}
  }}}});
 
