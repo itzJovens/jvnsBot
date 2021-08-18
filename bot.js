@@ -9,7 +9,7 @@ const opts = {
         password: 'oauth:u79zcmhtqum7o9we321k3xhpeh9x71'
     },
     channels: [
-        'itzjovens', 'uknwmyname', 'tsm_daequan', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'xdaboinextdoorx', 'giftedsubs'
+        'itzjovens', 'uknwmyname', 'tsm_daequan', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'xdaboinextdoorx', ''
     ]
 };
 
@@ -66,15 +66,14 @@ client.on('message', (channel, tags, message, self) => {
         console.log(`${args[1]}'s chat turned on. ${giftedsub} turned off`);
 	   if (!channel.includes(args[1])){
 		   client.join(args[1])};
-	      var giftedsub = '${args[1]}';
+	     	giftedsub = '${args[1]}';
       } else if(typeof giftedsub === 'undefined') { client.say('itzjovens', `@${args[1]}'s chat turned on.`);
 	      console.log(`@${args[1]}'s chat is now turned on.`);
 		if (!channel.includes(args[1])){
 			client.join(args[1])};
-		var giftedsub = '${args[1]}';
+		giftedsub = '${args[1]}';
 		}
  }}}});
-
 
 client.on('message', (channel, tags, message, self) => {
 	if(self) return;
@@ -85,7 +84,7 @@ client.on('message', (channel, tags, message, self) => {
 	if(message.includes("|gsoff")) {
     client.say('itzjovens', `@${args[1]}'s chat turned off.`);
     console.log(`@${args[1]}'s chat turned off.`);
-    	var giftedsub;
+    	giftedsub;
 	client.part(args[1]);
 }}}});
 
@@ -98,6 +97,15 @@ client.on('message', (channel, tags, message, self) => {
 		client.say('itzjovens', `Chat turned on: ${giftedsub}`);
 		console.log(`Chats turned on: ${giftedsub}`);
 }}});
+
+client.on('message', (channel, tags, message, self) => {
+	if(self) return;
+  if(channel === 'giftedsub'){
+    if (message){
+  console.log(`${tags.username}: ${message}`)
+  }
+  } 
+});
 
 //////////////////////////////////////////////////////////////////////////////// GIFTED SUBS //////////////////////////////////////////////////////////////////////
 client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) => {
