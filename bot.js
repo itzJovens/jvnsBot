@@ -86,9 +86,9 @@ client.on('message', (channel, tags, message, self) => {
   if (isBroadcaster){
   if (channel.includes('itzjovens')){
 	const args = message.slice(1).split(' ');
-	if(message.includes("|giftedsubsoff")) {
-    client.say('itzjovens', `@${args[1]}'s chat has now been turned off.`);
-    console.log(`@${args[1]}'s chat has now been turned off.`);
+	if(message.includes("|gsoff")) {
+    client.say('itzjovens', `@${args[1]}'s chat turned off.`);
+    console.log(`@${args[1]}'s chat turned off.`);
     	var giftedsub;
 	client.part(args[1]);
 }}}});
@@ -98,9 +98,9 @@ client.on('message', (channel, tags, message, self) => {
   let isBroadcaster = channel.slice(1) === tags.username;
   if (isBroadcaster){
   if (channel.includes('itzjovens'))
-	if(message === "|giftedsubs") {
-		client.say('itzjovens', `Chat turned on: ${giftedsubs}`);
-		console.log(`Chats turned on: ${giftedsubs}`);
+	if(message === "|giftedsub") {
+		client.say('itzjovens', `Chat turned on: ${giftedsub}`);
+		console.log(`Chats turned on: ${giftedsub}`);
 }}});
 
 //////////////////////////////////////////////////////////////////////////////// GIFTED SUBS //////////////////////////////////////////////////////////////////////
