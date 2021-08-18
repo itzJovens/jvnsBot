@@ -1,7 +1,7 @@
 const tmi = require('tmi.js');
 
 
-
+var giftedsub;
 // Define configuration options
 const opts = {
     identity: {
@@ -9,7 +9,7 @@ const opts = {
         password: 'oauth:u79zcmhtqum7o9we321k3xhpeh9x71'
     },
     channels: [
-        'itzjovens', 'uknwmyname', 'tsm_daequan', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'xdaboinextdoorx', ''
+        'itzjovens', 'uknwmyname', 'tsm_daequan', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'xdaboinextdoorx', giftedsub, 
     ]
 };
 
@@ -52,7 +52,6 @@ client.on("subscription", function (channel, username, method, message, userstat
 	
 });
 ///////////////////////////////////////////////////////////////// SUBSTITUTE GIFTED SUBS /////////////////////////////////////////////////////////////////
-var giftedsub;
 
 client.on('message', (channel, tags, message, self) => {
 	if(self) return;
@@ -100,7 +99,7 @@ client.on('message', (channel, tags, message, self) => {
 
 client.on('message', (channel, tags, message, self) => {
 	if(self) return;
-  if(channel === 'giftedsub'){
+  if(channel === giftedsub){
     if (message){
   console.log(`${tags.username}: ${message}`)
   }
@@ -139,7 +138,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	  if (isTurned){
 	if (numbOfSubs >= 5){
 	  syncDelay(3000)
-    client.say(channel, `POGGERS ${numbOfSubs}`);
+    client.say(channel, `${username.toUpperCase()} karagiMula karagiMula`);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
 	  }
   }
