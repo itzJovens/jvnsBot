@@ -68,7 +68,7 @@ client.on("subscription", function (channel, username, method, message, userstat
     client.say('kkatamina',`PRIME POGGIES`);
     console.log(`* Executed Sub || KKATAMINA`)}}}
 
-});
+
 });
 ///////////////////////////////////////////////////////////////// SUBSTITUTE GIFTED SUBS /////////////////////////////////////////////////////////////////
 var gs;
