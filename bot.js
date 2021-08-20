@@ -9,7 +9,7 @@ const opts = {
         password: 'oauth:u79zcmhtqum7o9we321k3xhpeh9x71'
     },
     channels: [
-        'itzjovens', 'uknwmyname', 'tsm_daequan', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'xdaboinextdoorx', 
+        'itzjovens', 'uknwmyname', 'tsm_daequan', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'xdaboinextdoorx', 'kkatamina',
     ]
 };
 
@@ -32,11 +32,20 @@ client.connect();
 client.on("resub", function (channel, username, months, message, userstate, methods) {
     // Do your stuff.
   let cumulativeMonths = userstate['msg-param-cumulative-months'];
-	
+  var methods = { prime, plan, planName };
 // SRCHFPS
   if (channel.includes('srchfps')){
     client.say('srchfps', `${username.toUpperCase()} FOR ${cumulativeMonths} MONTHS deansoW`);
     console.log(`* Executed Resub || SRCHFPS`)}
+
+//KKATAMINA
+  if (channel.includes('kkatamina')){
+  if (prime){
+  let isTurned = turned.includes(channel.slice(1));
+	  if (isTurned){
+	  syncDelay(5000)
+    client.say('kkatamina',`PRIME POGGIES`);
+    console.log(`* Executed Resub || KKATAMINA`)}}}
 
 });
 	
@@ -49,7 +58,17 @@ client.on("subscription", function (channel, username, method, message, userstat
   if (channel.includes('srchfps')){
     client.say('srchfps', `${username.toUpperCase()} deansoW`);
     console.log(`* Executed Sub || SRCHFPS`)}
-	
+
+//KKATAMINA
+  if (channel.includes('kkatamina')){
+  if (prime){
+  let isTurned = turned.includes(channel.slice(1));
+	  if (isTurned){
+	  syncDelay(5000)
+    client.say('kkatamina',`PRIME POGGIES`);
+    console.log(`* Executed Sub || KKATAMINA`)}}}
+
+});
 });
 ///////////////////////////////////////////////////////////////// SUBSTITUTE GIFTED SUBS /////////////////////////////////////////////////////////////////
 var gs;
