@@ -330,7 +330,8 @@ client.on('message', (channel, tags, message, self) => {
 client.on('raided', (channel, username, viewers) => {
 	if(channel = 'srchfps'){
 		client.say(channel, `${username} with the raid deansoW !`)
-		client.log(`SrchFPS got raided with ${viewers} by ${username}`)
+		client.log(`SrchFPS got raided with ${viewers} by ${username}`)}
+	});
 ///////////////////////////////////////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////////////////////////////////////////
 function onConnectedHandler(addr, port) {
 	client.say('itzjovens', `Bot has Started!`)
