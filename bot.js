@@ -32,7 +32,7 @@ client.connect();
 client.on("resub", function (channel, username, months, message, userstate, methods) {
     // Do your stuff.
   let cumulativeMonths = userstate['msg-param-cumulative-months'];
-  var methods = { prime, plan, planName };
+  const { prime, plan, planName } = methods;
 // SRCHFPS
   if (channel.includes('srchfps')){
     client.say('srchfps', `${username.toUpperCase()} FOR ${cumulativeMonths} MONTHS deansoW`);
@@ -53,7 +53,7 @@ client.on("resub", function (channel, username, months, message, userstate, meth
 	
 client.on("subscription", function (channel, username, method, message, userstate) {
     // Do your stuff.
-	
+    const { prime, plan, planName } = method;
 //////////////// SRCHFPS
   if (channel.includes('srchfps')){
     client.say('srchfps', `${username.toUpperCase()} deansoW`);
