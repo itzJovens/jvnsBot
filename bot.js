@@ -86,7 +86,7 @@ client.on('message', (channel, tags, message, self) => {
       } else if(!channel.includes(args[1])) { client.say('itzjovens', `@${args[1]}'s chat turned on.`);
 	      console.log(`@${args[1]}'s chat is now turned on.`);
             opts['channels'].push("#" + args[1]);
-            gs = ("'" + args[1] + "'");
+            gs = ("#" + args[1]);
             client.join(args[1])
 }}}}});
 
