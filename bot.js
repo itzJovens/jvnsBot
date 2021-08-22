@@ -34,12 +34,12 @@ client.on("resub", function (channel, username, months, message, userstate, meth
   let cumulativeMonths = userstate['msg-param-cumulative-months'];
   const { prime, plan, planName } = methods;
 // SRCHFPS
-  if (channel.includes('srchfps')){
+  if (channel === 'srchfps'){
     client.say('srchfps', `${username.toUpperCase()} FOR ${cumulativeMonths} MONTHS deansoW`);
     console.log(`* Executed Resub || SRCHFPS`)}
 
 //KKATAMINA
-  if (channel.includes('kkatamina')){
+  if (channel === 'kkatamina'){
   if (prime){
   let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
@@ -55,12 +55,12 @@ client.on("subscription", function (channel, username, method, message, userstat
     // Do your stuff.
     const { prime, plan, planName } = method;
 //////////////// SRCHFPS
-  if (channel.includes('srchfps')){
+  if (channel === 'srchfps'){
     client.say('srchfps', `${username.toUpperCase()} deansoW`);
     console.log(`* Executed Sub || SRCHFPS`)}
 
 //KKATAMINA
-  if (channel.includes('kkatamina')){
+  if (channel === 'kkatamina'){
   if (prime){
   let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
@@ -76,7 +76,7 @@ client.on('message', (channel, tags, message, self) => {
 	if(self) return;
   let isBroadcaster = channel.slice(1) === tags.username;
   if (isBroadcaster){
-  if (channel.includes('itzjovens')){
+  if (channel === 'itzjovens'){
   const args = message.slice(1).split(' ');
 	if(message.includes("|gsedit")) {
       gs = undefined;
@@ -124,12 +124,12 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   }
 
 // SRCHFPS
-  if (channel.includes('srchfps')) {	  
+  if (channel === 'srchfps') {	  
     client.say(channel, `${numbOfSubs} GIFTED SUBS deansoW`);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
 
 // DEANSOCOOL
-  if (channel.includes('deansocool')) {
+  if (channel === 'deansocool') {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
 	if (numbOfSubs >= 5){
@@ -139,7 +139,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	  }
   }
 // KARAGII 
-  if (channel.includes('karagii')) {
+  if (channel === 'karagii') {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
 	if (numbOfSubs >= 5){
@@ -149,7 +149,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	  }
   }
 // SYDEON 
-  if (channel.includes('sydeon')) {
+  if (channel === 'sydeon') {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
 	if (numbOfSubs >= 5){
@@ -167,7 +167,7 @@ client.on('message', (channel, tags, message, self) => {
 	if(self) return;
   let isBroadcaster = channel.slice(1) === tags.username;
   if (isBroadcaster){
-  if (channel.includes('itzjovens')){
+  if (channel === 'itzjovens'){
   const args = message.slice(1).split(' ');
 	if(message.includes("|turnon")) {
       if (turned.includes(args[1])){
@@ -195,7 +195,7 @@ client.on('message', (channel, tags, message, self) => {
 	if(self) return;
   let isBroadcaster = channel.slice(1) === tags.username;
   if (isBroadcaster){
-  if (channel.includes('itzjovens'))
+  if (channel === 'itzjovens')
 	if(message === "|turned") {
 		client.say('itzjovens', `Chat turned on: ${turned}`);
 		console.log(`Chats turned on: ${turned}`);
@@ -207,7 +207,7 @@ client.on('message', (channel, tags, message, self) => {
 	if(self) return;
 let isBroadcaster = channel.slice(1) === tags.username;
   if (isBroadcaster){
-  if (channel.includes('itzjovens'))
+  if (channel === 'itzjovens')
 	if(message === '|uptime subs') {
     		var time = process.uptime();
     		var uptime = (time + "").toHHMMSS();
@@ -222,7 +222,7 @@ client.on('message', (channel, tags, message, self) => {
 	if(self) return;
 let isBroadcaster = channel.slice(1) === tags.username;
   if (isBroadcaster){
-  if (channel.includes('itzjovens'))
+  if (channel === 'itzjovens')
 	if(message === '|commands subs') {
 	client.say('itzjovens', `Commands for Subs/Bits: "|uptime subs", "|turned", "|turnedon/off", "|giftedsubs", "|giftedsubson/off"`);
 	console.log(`Executed command in #itzjovens channel for sub/bits bot || ${uptime} !`)
