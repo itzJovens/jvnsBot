@@ -34,12 +34,12 @@ client.on("resub", function (channel, username, months, message, userstate, meth
   let cumulativeMonths = userstate['msg-param-cumulative-months'];
   const { prime, plan, planName } = methods;
 // SRCHFPS
-  if (channel === 'srchfps'){
+  if (channel.includes('srchfps')){
     client.say('srchfps', `${username.toUpperCase()} FOR ${cumulativeMonths} MONTHS deansoW`);
     console.log(`* Executed Resub || SRCHFPS`)}
 
 //KKATAMINA
-  if (channel === 'kkatamina'){
+  if (channel.includes('kkatamina')){
   if (prime){
   let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
@@ -55,12 +55,12 @@ client.on("subscription", function (channel, username, method, message, userstat
     // Do your stuff.
     const { prime, plan, planName } = method;
 //////////////// SRCHFPS
-  if (channel === 'srchfps'){
+  if (channel.includes('srchfps')){
     client.say('srchfps', `${username.toUpperCase()} deansoW`);
     console.log(`* Executed Sub || SRCHFPS`)}
 
 //KKATAMINA
-  if (channel === 'kkatamina'){
+  if (channel.includes('kkatamina')){
   if (prime){
   let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
@@ -195,11 +195,11 @@ client.on('message', (channel, tags, message, self) => {
 	if(self) return;
   let isBroadcaster = channel.slice(1) === tags.username;
   if (isBroadcaster){
-  if (channel === 'itzjovens')
+  if (channel.includes('itzjovens')){
 	if(message === "|turned") {
 		client.say('itzjovens', `Chat turned on: ${turned}`);
 		console.log(`Chats turned on: ${turned}`);
-}}});
+	}}}});
 
 //////////////////////////////////////////////////////////////////////////// UPTIME COMMAND ////////////////////////////////////////////////////////////////////
 	
@@ -207,7 +207,7 @@ client.on('message', (channel, tags, message, self) => {
 	if(self) return;
 let isBroadcaster = channel.slice(1) === tags.username;
   if (isBroadcaster){
-  if (channel === 'itzjovens')
+  if (channel.includes('itzjovens')){
 	if(message === '|uptime subs') {
     		var time = process.uptime();
     		var uptime = (time + "").toHHMMSS();
@@ -215,6 +215,7 @@ let isBroadcaster = channel.slice(1) === tags.username;
 	console.log(`Executed uptime command in #itzjovens channel for sub/bits bot || ${uptime} !`)
 	}
 	}
+  }
 });
 
 ///////////////////////////////////////////////////////////////////////////////// COMMANDS ///////////////////////////////////////////////////////////////////////////
@@ -222,12 +223,13 @@ client.on('message', (channel, tags, message, self) => {
 	if(self) return;
 let isBroadcaster = channel.slice(1) === tags.username;
   if (isBroadcaster){
-  if (channel === 'itzjovens')
+  if (channel.includes('itzjovens')){
 	if(message === '|commands subs') {
 	client.say('itzjovens', `Commands for Subs/Bits: "|uptime subs", "|turned", "|turnedon/off", "|giftedsubs", "|giftedsubson/off"`);
 	console.log(`Executed command in #itzjovens channel for sub/bits bot || ${uptime} !`)
 	}
 	}
+  }
 });
 
 //////////////////////////////////////////////////////////////////////////// TSM_DAEQUAN FOLLOWAGE ///////////////////////////////////////////////////////////////////
@@ -328,9 +330,9 @@ client.on('message', (channel, tags, message, self) => {
 
 ////////////////////////////////////////////////////////////////////////////// RAIDED ////////////////////////////////////////////////////////////////////////////////
 client.on('raided', (channel, username, viewers) => {
-	if(channel = 'srchfps'){
+	if(channel.includes('srchfps')){
 		client.say(channel, `${username} with the raid deansoW !`)
-		client.log(`SrchFPS got raided with ${viewers} by ${username}`)}
+		console.log(`SrchFPS got raided with ${viewers} by ${username}`)}
 	});
 ///////////////////////////////////////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////////////////////////////////////////
 function onConnectedHandler(addr, port) {
