@@ -76,7 +76,7 @@ client.on('message', (channel, tags, message, self) => {
 	if(self) return;
   let isBroadcaster = channel.slice(1) === tags.username;
   if (isBroadcaster){
-  if (channel === 'itzjovens'){
+  if (channel.includes('itzjovens')){
   const args = message.slice(1).split(' ');
 	if(message.includes("|gsedit")) {
       gs = undefined;
@@ -124,12 +124,12 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   }
 
 // SRCHFPS
-  if (channel === 'srchfps') {	  
+  if (channel.includes('srchfps')) {	  
     client.say(channel, `${numbOfSubs} GIFTED SUBS deansoW`);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
 
 // DEANSOCOOL
-  if (channel === 'deansocool') {
+  if (channel.includes('deansocool')) {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
 	if (numbOfSubs >= 5){
@@ -139,7 +139,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	  }
   }
 // KARAGII 
-  if (channel === 'karagii') {
+  if (channel.includes('karagii')) {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
 	if (numbOfSubs >= 5){
@@ -149,7 +149,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	  }
   }
 // SYDEON 
-  if (channel === 'sydeon') {
+  if (channel.includes('sydeon')) {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
 	if (numbOfSubs >= 5){
@@ -167,7 +167,7 @@ client.on('message', (channel, tags, message, self) => {
 	if(self) return;
   let isBroadcaster = channel.slice(1) === tags.username;
   if (isBroadcaster){
-  if (channel === 'itzjovens'){
+  if (channel.includes('itzjovens')){
   const args = message.slice(1).split(' ');
 	if(message.includes("|turnon")) {
       if (turned.includes(args[1])){
