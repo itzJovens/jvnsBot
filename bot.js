@@ -116,7 +116,7 @@ client.on('message', (channel, tags, message, self) => {
 client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) => {
     // Do your stuff.
 // GIFTED SUBSTITUTE
-  if (channel = gs) {
+  if (channel.includes(gs)) {
 	  if (numbOfSubs >= 5) {
 	  syncDelay(10000)
     client.say(gs, `${username} Pog `);
