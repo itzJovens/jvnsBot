@@ -153,7 +153,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
 	if (numbOfSubs >= 5){
-	  syncDelay(3000)
+	  syncDelay(5000)
     client.say(channel, `POGGIES ${numbOfSubs}`);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
     }
