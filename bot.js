@@ -118,7 +118,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 // GIFTED SUBSTITUTE
   if (channel = gs) {
 	  if (numbOfSubs >= 5) {
-	  syncDelay(3000)
+	  syncDelay(10000)
     client.say(gs, `${username} deansoW `);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
   }
