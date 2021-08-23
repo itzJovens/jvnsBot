@@ -119,7 +119,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   if (channel = gs) {
 	  if (numbOfSubs >= 5) {
 	  syncDelay(10000)
-    client.say(gs, `${username} deansoW `);
+    client.say(gs, `${username} Pog `);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
   }
 
