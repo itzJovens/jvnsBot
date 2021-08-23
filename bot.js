@@ -336,7 +336,7 @@ client.on('raided', (channel, username, viewers) => {
 	});
 ///////////////////////////////////////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////////////////////////////////////////
 function onConnectedHandler(addr, port) {
-	client.say('itzjovens', `Bot has Started!`)
+	client.say('itzjovens', `MrDestructoid Clap`)
     	console.log(`* Connected to ${addr}:${port}`);
 }
 
