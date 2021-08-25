@@ -214,9 +214,17 @@ let isBroadcaster = channel.slice(1) === tags.username;
 // FIRST PART
 client.on('message', (channel, tags, message, self) => {
   if(self) return;
-  var channel1 = channel
-  var message1 = message
+  const badges = tags.badges || {};
+  const isBroadcaster = tags['room-id'] === tags['user-id'] || tags.broadcaster;
+  const isMod = tags.mod || badges.moderator;
+  const isSub = badges.subscriber || badges.founder;
+  const isVIP = badges.vip;
+  const isStaff = badges.staff;
+  const isModUp = isBroadcaster || isMod;
+  const isSubUp = isModUp || isSub;
+  const isVIPUp = isSubUp || isVIP;
   if (channel.includes('tsm_daequan')){
+      if(isVIPUp || isStaff) return;
   if(message.toLowerCase().includes('!followage')) {
     client.say('uknwmyname', `!followage ${tags.username} ${channel.slice(1)}`);
     console.log(`EXECUTED FOLLOWAGE COMMAND FOR ${tags.username} on ${channel}`)}
