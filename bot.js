@@ -36,6 +36,11 @@ client.on("resub", function (channel, username, months, message, userstate, meth
   if (channel.includes('srchfps')){
     client.say('srchfps', `${username.toUpperCase()} FOR ${cumulativeMonths} MONTHS deansoW`);
     console.log(`* Executed Resub || SRCHFPS`)}
+
+//////////////// TSM_DAEQUAN
+  if (channel.includes('tsm_daequan')){
+    client.say('tsm_daequan', `${username.toUpperCase()} daeGood <3`);
+    console.log(`* Executed Resub || TSM_DAEQUAN`)}
 });
 	
 //////////////////////////////////////////////////////////////////////// SUBSCRIPTIONS ///////////////////////////////////////////////////////////////////////////
@@ -47,6 +52,10 @@ client.on("subscription", function (channel, username, method, message, userstat
     client.say('srchfps', `${username.toUpperCase()} deansoW`);
     console.log(`* Executed Sub || SRCHFPS`)}
 
+//////////////// TSM_DAEQUAN
+  if (channel.includes('tsm_daequan')){
+    client.say('tsm_daequan', `${username.toUpperCase()} daeGood <3`);
+    console.log(`* Executed Sub || TSM_DAEQUAN`)}
 });
 ///////////////////////////////////////////////////////////////// SUBSTITUTE GIFTED SUBS /////////////////////////////////////////////////////////////////
 var gs;
@@ -105,6 +114,11 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   if (channel.includes('srchfps')) {	  
     client.say(channel, `${numbOfSubs} GIFTED SUBS deansoW`);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
+
+//////////////// TSM_DAEQUAN
+  if (channel.includes('tsm_daequan')){
+    client.say('tsm_daequan', `${username.toUpperCase()} daeGood <3`);
+    console.log(`* Executed Gifted Sub || TSM_DAEQUAN`)}
 
 // DEANSOCOOL
   if (channel.includes('deansocool')) {
