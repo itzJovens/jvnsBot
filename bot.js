@@ -39,6 +39,7 @@ client.on("resub", function (channel, username, months, message, userstate, meth
 
 //////////////// TSM_DAEQUAN
   if (channel.includes('tsm_daequan')){
+	  syncDelay(3000)
     client.say('tsm_daequan', `${username.toUpperCase()} daeGood <3`);
     console.log(`* Executed Resub || TSM_DAEQUAN`)}
 });
@@ -54,6 +55,7 @@ client.on("subscription", function (channel, username, method, message, userstat
 
 //////////////// TSM_DAEQUAN
   if (channel.includes('tsm_daequan')){
+	  syncDelay(3000)
     client.say('tsm_daequan', `${username.toUpperCase()} daeGood <3`);
     console.log(`* Executed Sub || TSM_DAEQUAN`)}
 });
@@ -117,6 +119,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 
 //////////////// TSM_DAEQUAN
   if (channel.includes('tsm_daequan')){
+	  syncDelay(3000)
     client.say('tsm_daequan', `${username.toUpperCase()} daeGood <3`);
     console.log(`* Executed Gifted Sub || TSM_DAEQUAN`)}
 
