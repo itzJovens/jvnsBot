@@ -232,7 +232,7 @@ client.on('message', (channel, tags, message, self) => {
   const isModUp = isBroadcaster || isMod;
   const isSubUp = isModUp || isSub;
   const isVIPUp = isSubUp || isVIP;
-  if (channel.includes('itzjovens')){
+  if (channel.includes('tsm_daequan')){
       if(isVIPUp || isStaff) return;
   if(message.toLowerCase().includes('!followage')) {
     client.say('followage_bot_', `!followage ${tags.username} ${channel.slice(1)}`);
