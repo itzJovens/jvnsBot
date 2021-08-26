@@ -9,7 +9,7 @@ const opts = {
         password: 'oauth:u79zcmhtqum7o9we321k3xhpeh9x71'
     },
     channels: [
-        'itzjovens', 'uknwmyname', 'tsm_daequan', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'xdaboinextdoorx', ,
+        'itzjovens', 'uknwmyname', 'tsm_daequan', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'xdaboinextdoorx', 'followage_bot_',
     ]
 };
 
@@ -240,14 +240,14 @@ client.on('message', (channel, tags, message, self) => {
   if (channel.includes('tsm_daequan')){
       if(isVIPUp || isStaff) return;
   if(message.toLowerCase().includes('!followage')) {
-    client.say('uknwmyname', `!followage ${tags.username} ${channel.slice(1)}`);
+    client.say('followage_bot_', `!followage ${tags.username} ${channel.slice(1)}`);
     console.log(`EXECUTED FOLLOWAGE COMMAND FOR ${tags.username} on ${channel}`)}
   }
 });
 // SECOND PART
 client.on('message', (channel, tags, message, self) => {
 	if(self) return;
-  if (channel.includes('uknwmyname')){
+  if (channel.includes('followage_bot_')){
     if (message.toLowerCase().includes('@itzjovens,')){
       if (message.toLowerCase().includes('tsm_daequan')){
       client.say('tsm_daequan', `/me ${message.slice(12)} daeGood`)
