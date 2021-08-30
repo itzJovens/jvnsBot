@@ -205,20 +205,6 @@ let isBroadcaster = channel.slice(1) === tags.username;
   }
 });
 
-///////////////////////////////////////////////////////////////////////////////// COMMANDS ///////////////////////////////////////////////////////////////////////////
-client.on('message', (channel, tags, message, self) => {
-	if(self) return;
-let isBroadcaster = channel.slice(1) === tags.username;
-  if (isBroadcaster){
-  if (channel.includes('itzjovens')){
-	if(message === '|commands subs') {
-	client.say('itzjovens', `Commands for Subs/Bits: "|uptime subs", "|turned", "|turnedon/off", "|giftedsubs", "|giftedsubson/off"`);
-	console.log(`Executed command in #itzjovens channel for sub/bits bot || ${uptime} !`)
-	}
-	}
-  }
-});
-
 //////////////////////////////////////////////////////////////////////////// TSM_DAEQUAN FOLLOWAGE ///////////////////////////////////////////////////////////////////
 // FIRST PART
 client.on('message', (channel, tags, message, self) => {
