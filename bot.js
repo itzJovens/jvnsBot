@@ -221,7 +221,7 @@ async function onMessageHandler(channel, tags, message, self) {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
 	    if (isVIPUp || isStaff) return;
-    if (message.toLowerCase('!followage')){
+    if (message.toLowerCase().includes('!followage')){
       const qs = `${channel.slice(1)}/${tags.username}`
       const url = `https://api.2g.be/twitch/followage/${qs}?format=mwdhms`
       const data = await fetch(url);
