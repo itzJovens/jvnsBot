@@ -325,9 +325,6 @@ function syncDelay(milliseconds){
  }
 }
 
-function onMessageHandler(target, context, msg, self) {
-    if (self) { return; } // Ignore messages from the bot
-}
 
 String.prototype.toHHMMSS = function () {
     var sec_num = parseInt(this, 10); // don't forget the second param
