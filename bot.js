@@ -131,7 +131,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	  if (isTurned){
 	if (numbOfSubs >= 5){
 	  syncDelay(5000)
-    client.say(channel, `POGGIES ${numbOfSubs}`);
+    client.say(channel, `POGGIES ${username}`);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
     }
   }
