@@ -1,5 +1,5 @@
 const tmi = require('tmi.js');
-
+const fetch = require('node-fetch')
 
 var giftedsub;
 // Define configuration options
