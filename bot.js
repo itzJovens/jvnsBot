@@ -237,31 +237,27 @@ client.on('message', (channel, tags, message, self) => {
     }
   }  
 });
-// UKNWMYNAME
-// FISRT PART
-client.on('message', (channel, tags, message, self) => {
-  if(self) return;
-  var channel1 = channel
-  var message1 = message
-  if (channel.includes('xdaboinextdoorx')){
-  if(message.toLowerCase().includes('!followage')) {
-    client.say('uknwmyname', `!followage ${tags.username} ${channel.slice(1)}`);
-    console.log(`EXECUTED FOLLOWAGE COMMAND FOR ${tags.username} on ${channel}`)}
-  }
-});
-// SECOND PART
-client.on('message', (channel, tags, message, self) => {
-	if(self) return;
-  if (channel.includes('uknwmyname')){
-    if (message.toLowerCase().includes('@itzjovens,')){
-      if (message.toLowerCase().includes('uknwmyname')){
-      client.say('xdaboinextdoorx', `/me ${message.slice(12)}`)
-      console.log(`EXECUTED FOLLOWAGE COMMAND IN TSM_DAEQUAN CHANNEL`)
-      }
-    }
-  }  
-});
 
+async function onMessageHandler(channel, tags, message, self) {
+    if (self) { return; } // Ignore messages from the bot
+  const badges = tags.badges || {};
+  const isBroadcaster = tags['room-id'] === tags['user-id'] || tags.broadcaster;
+  const isMod = tags.mod || badges.moderator;
+  const isSub = badges.subscriber || badges.founder;
+  const isVIP = badges.vip;
+  const isStaff = badges.staff;
+  const isModUp = isBroadcaster || isMod;
+  const isSubUp = isModUp || isSub;
+  const isVIPUp = isSubUp || isVIP;
+    if(channel.includes('tsm_daequan')){
+	    if (isVIPUp || isStaff) return;
+    if (message.toLowerCase('!followage')){
+      const qs = `${channel.slice(1)}/${tags.username}`
+      const url = `https://api.2g.be/twitch/followage/${qs}?format=mwdhms`
+      const data = await fetch(url);
+      const new_url = await data.text();
+  console.log(`[${channel}]: ${new_url}`);
+}}}
 /////////////////////////////////////////////////////////////////////////////// ALLOWED COMMAND //////////////////////////////////////////////////////////////////////
 const allowed = [];
 
