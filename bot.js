@@ -205,39 +205,7 @@ let isBroadcaster = channel.slice(1) === tags.username;
   }
 });
 
-//////////////////////////////////////////////////////////////////////////// TSM_DAEQUAN FOLLOWAGE ///////////////////////////////////////////////////////////////////
-// FIRST PART
-client.on('message', (channel, tags, message, self) => {
-  if(self) return;
-  const badges = tags.badges || {};
-  const isBroadcaster = tags['room-id'] === tags['user-id'] || tags.broadcaster;
-  const isMod = tags.mod || badges.moderator;
-  const isSub = badges.subscriber || badges.founder;
-  const isVIP = badges.vip;
-  const isStaff = badges.staff;
-  const isModUp = isBroadcaster || isMod;
-  const isSubUp = isModUp || isSub;
-  const isVIPUp = isSubUp || isVIP;
-  if (channel.includes('itzjovens')){
-      if(isVIPUp || isStaff) return;
-  if(message.toLowerCase().includes('!followage')) {
-    client.say('followage_bot_', `!followage ${tags.username} ${channel.slice(1)}`);
-    console.log(`EXECUTED FOLLOWAGE COMMAND FOR ${tags.username} on ${channel}`)}
-  }
-});
-// SECOND PART
-client.on('message', (channel, tags, message, self) => {
-	if(self) return;
-  if (channel.includes('followage_bot_')){
-    if (message.toLowerCase().includes('@itzjovens,')){
-      if (message.toLowerCase().includes('tsm_daequan')){
-      client.say('tsm_daequan', `/me ${message.slice(12)} daeGood`)
-      console.log(`EXECUTED FOLLOWAGE COMMAND IN TSM_DAEQUAN CHANNEL`)
-      }
-    }
-  }  
-});
-
+//////////////////////////////////////////////////////////////////////////// TSM_DAEQUAN FOLLOWAGE //////////////////////////////////////////////////////////////////
 async function onMessageHandler(channel, tags, message, self) {
     if (self) { return; } // Ignore messages from the bot
   const badges = tags.badges || {};
@@ -250,14 +218,20 @@ async function onMessageHandler(channel, tags, message, self) {
   const isSubUp = isModUp || isSub;
   const isVIPUp = isSubUp || isVIP;
     if(channel.includes('tsm_daequan')){
+	  let isTurned = turned.includes(channel.slice(1));
+	  if (isTurned){
 	    if (isVIPUp || isStaff) return;
     if (message.toLowerCase('!followage')){
       const qs = `${channel.slice(1)}/${tags.username}`
       const url = `https://api.2g.be/twitch/followage/${qs}?format=mwdhms`
       const data = await fetch(url);
       const new_url = await data.text();
-  console.log(`[${channel}]: ${new_url}`);
-}}}
+    if (new_url.toLowerCase().includes(`${tags.username} is not following ${channel.slice(1)}`)){
+      console.log(`[${channel}]: ${new_url} peepoClown`);
+      client.say(channel, `${new_url} peepoClown`);
+    } else { console.log(`[${channel}]: ${new_url}`);
+	     client.say(channel, `${new_url}`)};
+}}}}
 /////////////////////////////////////////////////////////////////////////////// ALLOWED COMMAND //////////////////////////////////////////////////////////////////////
 const allowed = [];
 
@@ -315,6 +289,7 @@ client.on('raided', (channel, username, viewers) => {
 function onConnectedHandler(addr, port) {
 	client.say('itzjovens', `MrDestructoid Clap`)
     	console.log(`* Connected to ${addr}:${port}`);
+	turned.push(tsm_daequan)
 }
 
 function syncDelay(milliseconds){
