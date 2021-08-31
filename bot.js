@@ -289,7 +289,7 @@ client.on('raided', (channel, username, viewers) => {
 function onConnectedHandler(addr, port) {
 	client.say('itzjovens', `MrDestructoid Clap`)
     	console.log(`* Connected to ${addr}:${port}`);
-	turned.push(tsm_daequan)
+	turned.push('tsm_daequan')
 }
 
 function syncDelay(milliseconds){
