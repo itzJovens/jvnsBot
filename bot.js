@@ -139,7 +139,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   if (channel.includes('tsm_daequan')){
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
-	if (numbOfSubs >= 10){
+	if (numbOfSubs >= 5){
 		syncDelay(5000)
 	client.say('tsm_daequan', `${username.toUpperCase()} deansoW`);
 	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)};
