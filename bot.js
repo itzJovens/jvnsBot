@@ -139,7 +139,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   if (channel.includes('tsm_daequan')){
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
-	if (numbOfSubs >= 5){
+	if (numbOfSubs >= 10){
 		syncDelay(5000)
 	client.say('tsm_daequan', `${username.toUpperCase()} deansoW`);
 	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)};
@@ -221,7 +221,7 @@ async function onMessageHandler(channel, tags, message, self) {
 	  let isTurned = turned.includes(channel.slice(1));
 	  if (isTurned){
 	    if (isVIPUp || isStaff) return;
-    if (message.toLowerCase().includes('!followage')){
+    if (message.toLowerCase() == '!followage'){
       const qs = `${channel.slice(1)}/${tags.username}`
       const url = `https://api.2g.be/twitch/followage/${qs}?format=mwdhms`
       const data = await fetch(url);
