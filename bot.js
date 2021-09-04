@@ -218,7 +218,7 @@ async function onMessageHandler(channel, tags, message, self) {
   const isSubUp = isModUp || isSub;
   const isVIPUp = isSubUp || isVIP;
     if(channel.includes('tsm_daequan')){
-	  let isTurned = turned.includes(channel.slice(1));
+	  let isTurned = turned.includes('followage');
 	  if (isTurned){
 	    if (isVIPUp || isStaff) return;
     if (message.toLowerCase() == '!followage'){
@@ -289,7 +289,7 @@ client.on('raided', (channel, username, viewers) => {
 function onConnectedHandler(addr, port) {
 	client.say('itzjovens', `MrDestructoid Clap`)
     	console.log(`* Connected to ${addr}:${port}`);
-	turned.push('tsm_daequan')
+	turned.push('followage')
 }
 
 function syncDelay(milliseconds){
