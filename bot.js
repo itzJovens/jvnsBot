@@ -289,7 +289,8 @@ client.on('raided', (channel, username, viewers) => {
 function onConnectedHandler(addr, port) {
 	client.say('itzjovens', `MrDestructoid Clap`)
     	console.log(`* Connected to ${addr}:${port}`);
-	turned.push('followage')
+	console.log(`Channels connected: ${opts.channels}`);
+	console.log(`Turned on channels: ${turned}`);
 }
 
 function syncDelay(milliseconds){
