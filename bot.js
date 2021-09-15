@@ -97,8 +97,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	  if (numbOfSubs >= 5) {
 	  syncDelay(10000)
     client.say(gs, `${username} Pog `);
-    console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)
-    console.log(`****** ${message} ******`)}
+    console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
   }
 
 // SRCHFPS
