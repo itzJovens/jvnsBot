@@ -9,7 +9,7 @@ const opts = {
         password: 'oauth:u70tuostqo3bpryu5zc9vezkx9e8qy'
     },
     channels: [
-        'itzjovens', 'uknwmyname', 'tsm_daequan', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'xdaboinextdoorx', 'followage_bot_',
+        'itzjovens', 'uknwmyname', 'tsm_daequan', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'xdaboinextdoorx', 'followage_bot_', 'fuslie', 'symfuhny', 'sykkuno',
     ]
 };
 
@@ -108,46 +108,80 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 // DEANSOCOOL
   if (channel.includes('deansocool')) {
 	  let isTurned = turned.includes(channel.slice(1));
-	if (numbOfSubs >= 5){
-	  syncDelay(5000)
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
-	  if (isTurned){		  
+	  if (isTurned){	
+	if (numbOfSubs >= 5){	
+	  syncDelay(5000)		
     client.say(channel, `${username.toUpperCase()} deansoW`);
 	  }
   }
 // KARAGII 
   if (channel.includes('karagii')) {
 	  let isTurned = turned.includes(channel.slice(1));
-	if (numbOfSubs >= 5){
-	  syncDelay(5000)
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}	
-	  if (isTurned){		  
+	  if (isTurned){	
+	if (numbOfSubs >= 5){
+	  syncDelay(5000)		  
     client.say(channel, `POGGERS ${username}`);
 	  }
   }
 // SYDEON 
   if (channel.includes('sydeon')) {
 	  let isTurned = turned.includes(channel.slice(1));
-
-	if (numbOfSubs >= 5){
-	  syncDelay(5000)
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
-	  if (isTurned){		  
+	  if (isTurned){	
+	if (numbOfSubs >= 5){
+	  syncDelay(5000)		  
     client.say(channel, `POGGIES ${username}`);
     }
   }
 // TSM_DAEQUAN
   if (channel.includes('tsm_daequan')){
 	  let isTurned = turned.includes(channel.slice(1));
-	if (numbOfSubs >= 5){
-		syncDelay(5000)
 	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)};
-	  if (isTurned){		  
+	  if (isTurned){
+	if (numbOfSubs >= 5){
+		syncDelay(5000)		  
 	client.say('tsm_daequan', `Pog ${username.toUpperCase()}`);
 	  }
   }
 })
 
+// FUSLIE
+  if (channel.includes('fuslie')){
+	  let isTurned = turned.includes(channel.slice(1));
+	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)};
+	  if (isTurned){
+	if (numbOfSubs >= 5){
+		syncDelay(5000)		  
+	client.say('fuslie', `Pog ${username.toUpperCase()}`);
+	  }
+  }
+})
+
+// SYKKUNO
+  if (channel.includes('tsm_daequan')){
+	  let isTurned = turned.includes(channel.slice(1));
+	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)};
+	  if (isTurned){
+	if (numbOfSubs >= 5){
+		syncDelay(5000)		  
+	client.say('sykkuno', `Pog ${username.toUpperCase()}`);
+	  }
+  }
+})
+
+// SYMFUHNY
+  if (channel.includes('symfuhny')){
+	  let isTurned = turned.includes(channel.slice(1));
+	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)};
+	  if (isTurned){
+	if (numbOfSubs >= 5){
+		syncDelay(5000)		  
+	client.say('symfuhny', `Pog ${username.toUpperCase()}`);
+	  }
+  }
+})
 ///////////////////////////////////////////////////////////////////////// TURNED ON/OFF /////////////////////////////////////////////////////////////////////////////
 let turned = []
 
