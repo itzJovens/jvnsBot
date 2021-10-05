@@ -91,6 +91,7 @@ client.on('message', (channel, tags, message, self) => {
 
 //////////////////////////////////////////////////////////////////////////////// GIFTED SUBS //////////////////////////////////////////////////////////////////////
 client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) => {
+	  let isTurned = turned.includes(channel.slice(1));		
     // Do your stuff.
 // GIFTED SUBSTITUTE
   if (channel.includes(gs)) {
@@ -109,7 +110,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   if (channel.includes('deansocool')) {
 
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
-	  let isTurned = turned.includes(channel.slice(1));	
+
 	  if (isTurned){	
 	if (numbOfSubs >= 5){	
 	  syncDelay(5000)		
@@ -120,7 +121,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   if (channel.includes('karagii')) {
 
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
-	  let isTurned = turned.includes(channel.slice(1));	
+
 	  if (isTurned){	
 	if (numbOfSubs >= 5){
 	  syncDelay(5000)		  
@@ -131,7 +132,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   if (channel.includes('sydeon')) {
 
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
-	  let isTurned = turned.includes(channel.slice(1));	
+
 	  if (isTurned){	
 	if (numbOfSubs >= 5){
 	  syncDelay(5000)		  
@@ -142,7 +143,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   if (channel.includes('tsm_daequan')){
 
 	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)};
-	  let isTurned = turned.includes(channel.slice(1));	
+
 	  if (isTurned){
 	if (numbOfSubs >= 5){
 		syncDelay(5000)		  
@@ -155,7 +156,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   if (channel.includes('fuslie')){
 
 	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)};
-	  let isTurned = turned.includes(channel.slice(1));	
+
 	  if (isTurned){
 	if (numbOfSubs >= 5){
 		syncDelay(5000)		  
@@ -168,7 +169,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   if (channel.includes('tsm_daequan')){
 
 	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)};
-	  let isTurned = turned.includes(channel.slice(1));	
+	
 	  if (isTurned){
 	if (numbOfSubs >= 5){
 		syncDelay(5000)		  
@@ -181,7 +182,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
   if (channel.includes('symfuhny')){
 
 	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)};
-	  let isTurned = turned.includes(channel.slice(1));	
+
 	  if (isTurned){
 	if (numbOfSubs >= 5){
 		syncDelay(5000)		  
