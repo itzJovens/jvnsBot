@@ -108,41 +108,42 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 // DEANSOCOOL
   if (channel.includes('deansocool')) {
 	  let isTurned = turned.includes(channel.slice(1));
-	  if (isTurned){
 	if (numbOfSubs >= 5){
 	  syncDelay(5000)
-    client.say(channel, `${username.toUpperCase()} deansoW`);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
+	  if (isTurned){		  
+    client.say(channel, `${username.toUpperCase()} deansoW`);
 	  }
   }
 // KARAGII 
   if (channel.includes('karagii')) {
 	  let isTurned = turned.includes(channel.slice(1));
-	  if (isTurned){
 	if (numbOfSubs >= 5){
 	  syncDelay(5000)
+    console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}	
+	  if (isTurned){		  
     client.say(channel, `POGGERS ${username}`);
-    console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
 	  }
   }
 // SYDEON 
   if (channel.includes('sydeon')) {
 	  let isTurned = turned.includes(channel.slice(1));
-	  if (isTurned){
+
 	if (numbOfSubs >= 5){
 	  syncDelay(5000)
-    client.say(channel, `POGGIES ${username}`);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
+	  if (isTurned){		  
+    client.say(channel, `POGGIES ${username}`);
     }
   }
 // TSM_DAEQUAN
   if (channel.includes('tsm_daequan')){
 	  let isTurned = turned.includes(channel.slice(1));
-	  if (isTurned){
 	if (numbOfSubs >= 5){
 		syncDelay(5000)
-	client.say('tsm_daequan', `Pog ${username.toUpperCase()}`);
 	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)};
+	  if (isTurned){		  
+	client.say('tsm_daequan', `Pog ${username.toUpperCase()}`);
 	  }
   }
 })
