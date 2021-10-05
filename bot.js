@@ -6,7 +6,7 @@ var giftedsub;
 const opts = {
     identity: {
         username: 'itzjovens',
-        password: 'oauth:u79zcmhtqum7o9we321k3xhpeh9x71'
+        password: 'oauth:u70tuostqo3bpryu5zc9vezkx9e8qy'
     },
     channels: [
         'itzjovens', 'uknwmyname', 'tsm_daequan', 'karagii', 'sydeon', 'srchfps', 'deansocool', 'xdaboinextdoorx', 'followage_bot_',
