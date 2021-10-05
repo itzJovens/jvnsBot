@@ -145,7 +145,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	client.say('tsm_daequan', `Pog ${username.toUpperCase()}`);
 	  }
   }
-})
+
 
 // FUSLIE
   if (channel.includes('fuslie')){
@@ -157,7 +157,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	client.say('fuslie', `Pog ${username.toUpperCase()}`);
 	  }
   }
-})
+
 
 // SYKKUNO
   if (channel.includes('tsm_daequan')){
@@ -169,7 +169,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	client.say('sykkuno', `Pog ${username.toUpperCase()}`);
 	  }
   }
-})
+
 
 // SYMFUHNY
   if (channel.includes('symfuhny')){
@@ -181,6 +181,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	client.say('symfuhny', `Pog ${username.toUpperCase()}`);
 	  }
   }
+
 })
 ///////////////////////////////////////////////////////////////////////// TURNED ON/OFF /////////////////////////////////////////////////////////////////////////////
 let turned = []
