@@ -109,7 +109,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 // DEANSOCOOL
   if (channel.includes('deansocool')) {
 
-    console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
+    console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)
 
 	  if (isTurned){	
 	if (numbOfSubs >= 5){	
@@ -117,10 +117,11 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
     client.say(channel, `${username.toUpperCase()} deansoW`);
 	  }
   }
+  }
 // KARAGII 
   if (channel.includes('karagii')) {
 
-    console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
+    console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)
 
 	  if (isTurned){	
 	if (numbOfSubs >= 5){
@@ -128,10 +129,11 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
     client.say(channel, `POGGERS ${username}`);
 	  }
   }
+  }
 // SYDEON 
   if (channel.includes('sydeon')) {
 
-    console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
+    console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)
 
 	  if (isTurned){	
 	if (numbOfSubs >= 5){
@@ -139,15 +141,17 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
     client.say(channel, `POGGIES ${username}`);
     }
   }
+  }
 // TSM_DAEQUAN
   if (channel.includes('tsm_daequan')){
 
-	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)};
+	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`);
 
 	  if (isTurned){
 	if (numbOfSubs >= 5){
 		syncDelay(5000)		  
 	client.say('tsm_daequan', `Pog ${username.toUpperCase()}`);
+	  }
 	  }
   }
 
@@ -155,7 +159,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 // FUSLIE
   if (channel.includes('fuslie')){
 
-	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)};
+	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`);
 
 	  if (isTurned){
 	if (numbOfSubs >= 5){
@@ -163,12 +167,13 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	client.say('fuslie', `Pog ${username.toUpperCase()}`);
 	  }
   }
+  }
 
 
 // SYKKUNO
   if (channel.includes('tsm_daequan')){
 
-	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)};
+	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`);
 	
 	  if (isTurned){
 	if (numbOfSubs >= 5){
@@ -176,18 +181,20 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	client.say('sykkuno', `Pog ${username.toUpperCase()}`);
 	  }
   }
+  }
 
 
 // SYMFUHNY
   if (channel.includes('symfuhny')){
 
-	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)};
+	console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`);
 
 	  if (isTurned){
 	if (numbOfSubs >= 5){
 		syncDelay(5000)		  
 	client.say('symfuhny', `Pog ${username.toUpperCase()}`);
 	  }
+  }
   }
 
 })
