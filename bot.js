@@ -114,7 +114,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 	  if (isTurned){	
 	if (numbOfSubs >= 5){	
 	  syncDelay(5000)		
-    client.say(channel, `${username.toUpperCase()} deansoW`);
+    client.say(channel, `${username.toUpperCase()} deansoHype`);
 	  }
   }
   }
