@@ -34,7 +34,7 @@ client.on("resub", function (channel, username, months, message, userstate, meth
   let cumulativeMonths = userstate['msg-param-cumulative-months'];
 // SRCHFPS
   if (channel.includes('srchfps')){
-    client.say('srchfps', `${username.toUpperCase()} FOR ${cumulativeMonths} MONTHS deansoHype`);
+    client.say('srchfps', `${username.toUpperCase()} FOR ${cumulativeMonths} MONTHS PogChamp`);
     console.log(`* Executed Resub || SRCHFPS`)}
 });
 	
@@ -44,7 +44,7 @@ client.on("subscription", function (channel, username, method, message, userstat
     // Do your stuff.
 //////////////// SRCHFPS
   if (channel.includes('srchfps')){
-    client.say('srchfps', `${username.toUpperCase()} deansoHype`);
+    client.say('srchfps', `${username.toUpperCase()} PogChamp`);
     console.log(`* Executed Sub || SRCHFPS`)}
 });
 ///////////////////////////////////////////////////////////////// SUBSTITUTE GIFTED SUBS /////////////////////////////////////////////////////////////////
@@ -103,7 +103,7 @@ client.on("submysterygift", (channel, username, numbOfSubs, methods, userstate) 
 
 // SRCHFPS
   if (channel.includes('srchfps')) {	  
-    client.say(channel, `${numbOfSubs} GIFTED SUBS deansoHype`);
+    client.say(channel, `${numbOfSubs} GIFTED SUBS PogChamp`);
     console.log(`****** ${numbOfSubs} Gifted Subs || ${channel} ******`)}
 
 // DEANSOCOOL
